@@ -4,8 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Mandy">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="使用Hexo+hexo-theme-matery搭建一个属于自己的博客, Mandy">
+    <meta name="description" content="
+最近无意看到Hexo博客框架，官网介绍得挺全的，想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
+1. 安装 Hexo$ npm install -g hexo-cli
+2. 建站安装 H">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Mandy</title>
+    <title>使用Hexo+hexo-theme-matery搭建一个属于自己的博客 | Mandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +263,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        使用Hexo+hexo-theme-matery搭建一个属于自己的博客
                     </div>
                 </div>
             </div>
@@ -375,9 +378,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Hexo/" target="_blank">
+                                <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -388,7 +395,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-23
+                    2019-08-24
                 </div>
 
                 
@@ -404,19 +411,28 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+                <hr>
+<p>最近无意看到Hexo博客框架，<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">官网</a>介绍得挺全的，想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。</p>
+<h3 id="1-安装-Hexo"><a href="#1-安装-Hexo" class="headerlink" title="1. 安装 Hexo"></a>1. 安装 Hexo</h3><p><code>$ npm install -g hexo-cli</code></p>
+<h3 id="2-建站"><a href="#2-建站" class="headerlink" title="2. 建站"></a>2. 建站</h3><p>安装 Hexo 完成后，执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<p><code>$ hexo init &lt;folder&gt;</code><br><code>$ cd &lt;folder&gt;</code><br><code>$ npm install</code></p>
+<p>新建完成后，指定文件夹的目录如下：<br>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes</p>
+<p>启动服务<br><code>$ hexo server</code><br>默认情况下，访问网址为： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>选项    描述<br>-p,     –port    重设端口<br>-s,     –static    只使用静态文件<br>-l,     –log    启动日记记录，使用覆盖记录格式</p>
+<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h3><p>hexo相关的配置都放在根目录 _config.yml 里面</p>
+<h3 id="4-切换主题"><a href="#4-切换主题" class="headerlink" title="4. 切换主题"></a>4. 切换主题</h3><p>hexo初始化之后默认的主题是landscape，如果想要切换主题， 可以将你下载好的主题放在 themes 文件夹内，我比较喜欢 <a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">typora-vue-theme</a> 这个主题，将它放到themes文件夹之后修改根目录的 _config.yml ，找到对应的 theme , 把该值改为对应的主题的文件夹名称</p>
+<h3 id="5-国际化"><a href="#5-国际化" class="headerlink" title="5. 国际化"></a>5. 国际化</h3><p>每个主题下面会有个languages文件夹，修改 _config.yml 内的 language , 将该值改为为对应的languages文件夹里面的文件名称</p>
+<h3 id="6-上传到github"><a href="#6-上传到github" class="headerlink" title="6. 上传到github"></a>6. 上传到github</h3><p>6.1. 创建仓库<br>新建一个名为你的用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="noopener">http://test.github.io</a> </p>
+<p>几个注意的地方：</p>
+<p>注册的邮箱一定要验证，否则不会成功；<br>仓库名字必须是：username.github.io，其中username是你的用户名；<br>仓库创建成功不会立即生效，需要过一段时间，大概10-30分钟，或者更久，我的等了半个小时才生效；<br>创建成功后，默认会在你这个仓库里生成一些示例页面，以后你的网站所有代码都是放在这个仓库里啦。</p>
+<p>6.2 部署<br>安装 hexo-deployer-git。<br><code>$ npm install hexo-deployer-git --save</code></p>
+<p>修改配置。<br>在_config.yml文件中，找到Deployment，然后按照如下修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:Mandy-cen/Mandy-cen.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>1) 执行以下命令生成博客的静态页面<br><code>$ hexo generate</code><br>或者 <code>$ hexo g</code><br>$ hexo deploy</p>
+<p>2) 执行以下命令将我们生成的博客静态页面上传到GitHub<br><code>$ hexo deploy</code><br>或者 <code>$ hexo d</code></p>
+<p>3) 打开浏览器访问 username.github.io 即可访问我们刚部署到Github上的博客，比如我的就是  <a href="https://mandy-cen.github.io/" target="_blank" rel="noopener">https://mandy-cen.github.io/</a></p>
+<p>如果有遇到一些资源不对或者其他问题时，可以尝试执行以下命令清除已经生成的静态文件，再重新执行上面的 第 1 步 第 2 步 即可。<br><code>$ hexo clean</code># 删除已经生成的静态页面</p>
+<p><img src="./img/favicon.png" alt="图片描述"></p>
 
             </div>
             <hr/>
@@ -575,9 +591,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Hello World》
+                    《使用Hexo+hexo-theme-matery搭建一个属于自己的博客》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/23/hello-world/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/24/Hexo搭建博客/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Mandy Cen
             </a> 采用
@@ -617,9 +633,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/08/24/Hexo搭建博客/">
                     <div class="card-image">
@@ -640,9 +657,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -651,6 +668,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -666,7 +684,7 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/08/23/hello-world/">
@@ -696,7 +714,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
