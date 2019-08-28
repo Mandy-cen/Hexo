@@ -5,9 +5,9 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="使用Hexo+hexo-theme-matery搭建一个属于自己的博客, Mandy">
-    <meta name="description" content="使用Hexo+hexo-theme-matery搭建一个属于自己的博客
-最近无意看到Hexo博客框架，官网介绍得挺全的，想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
-1. 安装 Hexo">
+    <meta name="description" content="最近无意看到Hexo博客框架，官网介绍得挺全的，想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
+1. 安装 Hexo$ npm install -g hexo-cli
+2. 建站安装 He">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +30,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -383,10 +383,6 @@
                                 <span class="chip bg-color">Hexo</span>
                             </a>
                         
-                            <a href="/tags/hexo-theme-matery/" target="_blank">
-                                <span class="chip bg-color">hexo-theme-matery</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -414,11 +410,11 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="使用Hexo-hexo-theme-matery搭建一个属于自己的博客"><a href="#使用Hexo-hexo-theme-matery搭建一个属于自己的博客" class="headerlink" title="使用Hexo+hexo-theme-matery搭建一个属于自己的博客"></a>使用Hexo+hexo-theme-matery搭建一个属于自己的博客</h1><hr>
-<p>最近无意看到Hexo博客框架，<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">官网</a>介绍得挺全的，想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。</p>
+                <p>最近无意看到Hexo博客框架，<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">官网</a>介绍得挺全的，想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。</p>
 <h3 id="1-安装-Hexo"><a href="#1-安装-Hexo" class="headerlink" title="1. 安装 Hexo"></a>1. 安装 Hexo</h3><p><code>$ npm install -g hexo-cli</code></p>
 <h3 id="2-建站"><a href="#2-建站" class="headerlink" title="2. 建站"></a>2. 建站</h3><p>安装 Hexo 完成后，执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
 <p><code>$ hexo init &lt;folder&gt;</code><br><code>$ cd &lt;folder&gt;</code><br><code>$ npm install</code></p>
+<p>新建完成后，指定文件夹的目录如下：<br>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes</p>
 <p>启动服务<br><code>$ hexo server</code><br>默认情况下，访问网址为： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>选项    描述<br>-p,     –port    重设端口<br>-s,     –static    只使用静态文件<br>-l,     –log    启动日记记录，使用覆盖记录格式</p>
 <h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h3><p>hexo相关的配置都放在根目录 _config.yml 里面</p>
 <h3 id="4-切换主题"><a href="#4-切换主题" class="headerlink" title="4. 切换主题"></a>4. 切换主题</h3><p>hexo初始化之后默认的主题是landscape，如果想要切换主题， 可以将你下载好的主题放在 themes 文件夹内，我比较喜欢 <a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">typora-vue-theme</a> 这个主题，将它放到themes文件夹之后修改根目录的 _config.yml ，找到对应的 theme , 把该值改为对应的主题的文件夹名称</p>
@@ -428,12 +424,43 @@
 <p>注册的邮箱一定要验证，否则不会成功；<br>仓库名字必须是：username.github.io，其中username是你的用户名；<br>仓库创建成功不会立即生效，需要过一段时间，大概10-30分钟，或者更久，我的等了半个小时才生效；<br>创建成功后，默认会在你这个仓库里生成一些示例页面，以后你的网站所有代码都是放在这个仓库里啦。</p>
 <p>6.2 部署<br>安装 hexo-deployer-git。<br><code>$ npm install hexo-deployer-git --save</code></p>
 <p>修改配置。<br>在_config.yml文件中，找到Deployment，然后按照如下修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:Mandy-cen/Mandy-cen.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>Mandy<span class="token punctuation">-</span>cen/Mandy<span class="token punctuation">-</span>cen.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master</code></pre>
 <p>1) 执行以下命令生成博客的静态页面<br><code>$ hexo generate</code><br>或者 <code>$ hexo g</code><br>$ hexo deploy</p>
 <p>2) 执行以下命令将我们生成的博客静态页面上传到GitHub<br><code>$ hexo deploy</code><br>或者 <code>$ hexo d</code></p>
 <p>3) 打开浏览器访问 username.github.io 即可访问我们刚部署到Github上的博客，比如我的就是  <a href="https://mandy-cen.github.io/" target="_blank" rel="noopener">https://mandy-cen.github.io/</a></p>
 <p>如果有遇到一些资源不对或者其他问题时，可以尝试执行以下命令清除已经生成的静态文件，再重新执行上面的 第 1 步 第 2 步 即可。<br><code>$ hexo clean</code># 删除已经生成的静态页面</p>
+<h3 id="7-总结常用命令"><a href="#7-总结常用命令" class="headerlink" title="7. 总结常用命令"></a>7. 总结常用命令</h3><p>1) 模版</p>
+<pre class=" language-yaml"><code class="language-yaml">    hexo new "postName" <span class="token comment" spellcheck="true">#新建文章</span>
+    hexo new page "pageName" <span class="token comment" spellcheck="true">#新建页面</span>
+    hexo generate <span class="token comment" spellcheck="true">#生成静态页面至public目录</span>
+    hexo server <span class="token comment" spellcheck="true">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span>
+    hexo deploy <span class="token comment" spellcheck="true">#将.deploy目录部署到GitHub</span>
+
+    hexo new <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> &lt;title<span class="token punctuation">></span>
+    hexo new photo "My Gallery"
+    hexo new "Hello World" <span class="token punctuation">-</span><span class="token punctuation">-</span>lang tw</code></pre>
+<p>2) 草稿</p>
+<pre class=" language-yaml"><code class="language-yaml">    hexo publish <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> &lt;title<span class="token punctuation">></span></code></pre>
+<p>3) 服务器</p>
+<pre class=" language-yaml"><code class="language-yaml">    hexo server <span class="token comment" spellcheck="true">#Hexo 会监视文件变动并自动更新，您无须重启服务器。</span>
+    hexo server <span class="token punctuation">-</span>s <span class="token comment" spellcheck="true">#静态模式</span>
+    hexo server <span class="token punctuation">-</span>p 5000 <span class="token comment" spellcheck="true">#更改端口</span>
+    hexo server <span class="token punctuation">-</span>i 192.168.1.1 <span class="token comment" spellcheck="true">#自定义 IP</span>
+
+    hexo clean <span class="token comment" spellcheck="true">#清除缓存 网页正常情况下可以忽略此条命令</span>
+    hexo g <span class="token comment" spellcheck="true">#生成静态网页</span>
+    hexo d <span class="token comment" spellcheck="true">#开始部署</span></code></pre>
+<p>4) 推送到服务器上</p>
+<pre class=" language-yaml"><code class="language-yaml">    hexo n <span class="token comment" spellcheck="true">#写文章</span>
+    hexo g <span class="token comment" spellcheck="true">#生成</span>
+    hexo d <span class="token comment" spellcheck="true">#部署 #可与hexo g合并为 hexo d -g</span></code></pre>
+<p>5) hexo</p>
+<pre class=" language-yaml"><code class="language-yaml">    npm install hexo <span class="token punctuation">-</span>g <span class="token comment" spellcheck="true">#安装  </span>
+    npm update hexo <span class="token punctuation">-</span>g <span class="token comment" spellcheck="true">#升级  </span>
+    hexo init <span class="token comment" spellcheck="true">#初始化</span></code></pre>
 <p><img src="https://raw.githubusercontent.com/Mandy-cen/Mandy-cen.github.io/master/favicon.png" alt></p>
 
             </div>
@@ -652,9 +679,9 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用Hexo+hexo-theme-matery搭建一个属于自己的博客
-最近无意看到Hexo博客框架，官网介绍得挺全的，想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
-1. 安装 Hexo
+                            最近无意看到Hexo博客框架，官网介绍得挺全的，想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
+1. 安装 Hexo$ npm install -g hexo-cli
+2. 建站安装 He
                         
                     </div>
                     <div class="publish-info">
@@ -675,10 +702,6 @@
                     
                     <a href="/tags/Hexo/" target="_blank">
                         <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/hexo-theme-matery/" target="_blank">
-                        <span class="chip bg-color">hexo-theme-matery</span>
                     </a>
                     
                 </div>
