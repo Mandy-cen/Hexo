@@ -109,17 +109,10 @@ deploy:
     
     hexo clean #清除缓存 网页正常情况下可以忽略此条命令
     hexo g #生成静态网页
-    hexo d #开始部署
-```
-
-4) 推送到服务器上
-```yaml
-    hexo n #写文章
-    hexo g #生成
     hexo d #部署 #可与hexo g合并为 hexo d -g
 ```
 
-5) hexo
+4) hexo
 ```yaml
     npm install hexo -g #安装  
     npm update hexo -g #升级  
