@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="使用Hexo+hexo-theme-matery搭建一个属于自己的博客, Mandy">
-    <meta name="description" content="最近无意看到Hexo博客框架，官网介绍得挺全的，想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
-1. 安装 Hexo$ npm install -g hexo-cli
-2. 建站安装 He">
+    <meta name="description" content="最近无意发现Hexo博客框架，官网介绍Hexo是一个快速、简洁且高效的博客框架。想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
+1. 安装 Hexo$ npm install -g hex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -410,45 +409,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最近无意看到Hexo博客框架，<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">官网</a>介绍得挺全的，想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。</p>
+                <p>最近无意发现Hexo博客框架，<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">官网</a>介绍Hexo是一个快速、简洁且高效的博客框架。想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。</p>
 <h3 id="1-安装-Hexo"><a href="#1-安装-Hexo" class="headerlink" title="1. 安装 Hexo"></a>1. 安装 Hexo</h3><p><code>$ npm install -g hexo-cli</code></p>
 <h3 id="2-建站"><a href="#2-建站" class="headerlink" title="2. 建站"></a>2. 建站</h3><p>安装 Hexo 完成后，执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
 <p><code>$ hexo init &lt;folder&gt;</code><br><code>$ cd &lt;folder&gt;</code><br><code>$ npm install</code></p>
 <p>新建完成后，指定文件夹的目录如下：<br>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes</p>
-<p>启动服务<br><code>$ hexo server</code><br>默认情况下，访问网址为： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>选项    描述<br>-p,     –port    重设端口<br>-s,     –static    只使用静态文件<br>-l,     –log    启动日记记录，使用覆盖记录格式</p>
-<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h3><p>hexo相关的配置都放在根目录 _config.yml 里面</p>
-<h3 id="4-切换主题"><a href="#4-切换主题" class="headerlink" title="4. 切换主题"></a>4. 切换主题</h3><p>hexo初始化之后默认的主题是landscape，如果想要切换主题， 可以将你下载好的主题放在 themes 文件夹内，我比较喜欢 <a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">typora-vue-theme</a> 这个主题，将它放到themes文件夹之后修改根目录的 _config.yml ，找到对应的 theme , 把该值改为对应的主题的文件夹名称</p>
-<h3 id="5-国际化"><a href="#5-国际化" class="headerlink" title="5. 国际化"></a>5. 国际化</h3><p>每个主题下面会有个languages文件夹，修改 _config.yml 内的 language , 将该值改为为对应的languages文件夹里面的文件名称</p>
-<h3 id="6-上传到github"><a href="#6-上传到github" class="headerlink" title="6. 上传到github"></a>6. 上传到github</h3><p>6.1. 创建仓库<br>新建一个名为你的用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="noopener">http://test.github.io</a> </p>
-<p>几个注意的地方：</p>
-<p>注册的邮箱一定要验证，否则不会成功；<br>仓库名字必须是：username.github.io，其中username是你的用户名；<br>仓库创建成功不会立即生效，需要过一段时间，大概10-30分钟，或者更久，我的等了半个小时才生效；<br>创建成功后，默认会在你这个仓库里生成一些示例页面，以后你的网站所有代码都是放在这个仓库里啦。</p>
-<p>6.2 部署<br>安装 hexo-deployer-git。<br><code>$ npm install hexo-deployer-git --save</code></p>
+<p>启动服务<br><code>$ hexo server</code><br>或者<br><code>$ hexo s</code><br>默认情况下，访问网址为： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>选项    描述<br>-p,     –port    重设端口<br>-s,     –static    只使用静态文件<br>-l,     –log    启动日记记录，使用覆盖记录格式</p>
+<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h3><p>hexo相关的配置都放在根目录 _config.yml 里面, 里面的配置都写得很简明。</p>
+<h3 id="4-切换主题"><a href="#4-切换主题" class="headerlink" title="4. 切换主题"></a>4. 切换主题</h3><p>hexo初始化之后默认的主题是landscape，如果想要切换主题， 可以将提前下载好的主题放在 themes 文件夹内。我个人比较喜欢 <a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">typora-vue-theme</a> 这个主题，然后修改根目录的 _config.yml 文件，找到对应的 theme , 把theme的值改为对应的主题的文件夹名称就可以了</p>
+<h3 id="5-上传到github"><a href="#5-上传到github" class="headerlink" title="5. 上传到github"></a>5. 上传到github</h3><p>5.1. 创建仓库<br>新建一个名为你的用户名.github.io的仓库。<br>例如，如果你的github用户名是test，那么你就新建test.github.io的仓库，后面访问的博客地址就是 <a href="http://test.github.io" target="_blank" rel="noopener">http://test.github.io</a> </p>
+<p>5.2 部署<br>安装 hexo-deployer-git<br><code>$ npm install hexo-deployer-git --save</code></p>
 <p>修改配置。<br>在_config.yml文件中，找到Deployment，然后按照如下修改</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
   <span class="token key atrule">type</span><span class="token punctuation">:</span> git
-  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>Mandy<span class="token punctuation">-</span>cen/Mandy<span class="token punctuation">-</span>cen.github.io.git
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>yourname/yourname.github.io.git
   <span class="token key atrule">branch</span><span class="token punctuation">:</span> master</code></pre>
-<p>1) 执行以下命令生成博客的静态页面<br><code>$ hexo generate</code><br>或者 <code>$ hexo g</code><br>$ hexo deploy</p>
+<p>1) 执行以下命令生成博客的静态页面<br><code>$ hexo generate</code><br>或者 <code>$ hexo g</code></p>
 <p>2) 执行以下命令将我们生成的博客静态页面上传到GitHub<br><code>$ hexo deploy</code><br>或者 <code>$ hexo d</code></p>
-<p>3) 打开浏览器访问 username.github.io 即可访问我们刚部署到Github上的博客，比如我的就是  <a href="https://mandy-cen.github.io/" target="_blank" rel="noopener">https://mandy-cen.github.io/</a></p>
-<p>如果有遇到一些资源不对或者其他问题时，可以尝试执行以下命令清除已经生成的静态文件，再重新执行上面的 第 1 步 第 2 步 即可。<br><code>$ hexo clean</code># 删除已经生成的静态页面</p>
+<p>3) 打开浏览器访问 username.github.io 即可访问我们刚部署到Github上的博客</p>
+<h3 id="6-备份hexo代码"><a href="#6-备份hexo代码" class="headerlink" title="6. 备份hexo代码"></a>6. 备份hexo代码</h3><p>对于一个开发人员来说保存和备份代码是非常重要的。使用hexo在githut上搭建博客，仓库里只有生成网页的静态文件，是没有hexo的源文件的，所以如果要换电脑开发写博客的话就会很麻烦。这时我们可以利用分支来备份代码，master分支上保存的是hexo生成的静态文件（上面第五步的deploy配置分支是master），新建hexo分支来备份源文件</p>
+<p>首先在本地仓库下的master分支下创建个hexo分支, 后面修改项目提交都是提交到这个分支上<br> <img src="https://raw.githubusercontent.com/Mandy-cen/Mandy-cen.github.io/hexo/themes/matery/source/images/20190829155537.png" alt>   </p>
+<p>执行 <code>git add, git commit -m &quot;初始化项目&quot;, git push origin hexo</code> 这样hexo分支下就备份了源代码了</p>
+<p>如果想发布新文章到博客上，直接执行hexo g -d 就可以部署到github上了</p>
 <h3 id="7-总结常用命令"><a href="#7-总结常用命令" class="headerlink" title="7. 总结常用命令"></a>7. 总结常用命令</h3><p>1) 模版</p>
 <pre class=" language-yaml"><code class="language-yaml">    hexo new "postName" <span class="token comment" spellcheck="true">#新建文章</span>
     hexo new page "pageName" <span class="token comment" spellcheck="true">#新建页面</span>
-    hexo generate <span class="token comment" spellcheck="true">#生成静态页面至public目录</span>
-    hexo server <span class="token comment" spellcheck="true">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span>
-    hexo deploy <span class="token comment" spellcheck="true">#将.deploy目录部署到GitHub</span>
-
-    hexo new <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> &lt;title<span class="token punctuation">></span>
-    hexo new photo "My Gallery"
-    hexo new "Hello World" <span class="token punctuation">-</span><span class="token punctuation">-</span>lang tw</code></pre>
+    hexo new photo "My Gallery"</code></pre>
 <p>2) 草稿</p>
 <pre class=" language-yaml"><code class="language-yaml">    hexo publish <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> &lt;title<span class="token punctuation">></span></code></pre>
 <p>3) 服务器</p>
 <pre class=" language-yaml"><code class="language-yaml">    hexo server <span class="token comment" spellcheck="true">#Hexo 会监视文件变动并自动更新，您无须重启服务器。</span>
     hexo server <span class="token punctuation">-</span>s <span class="token comment" spellcheck="true">#静态模式</span>
-    hexo server <span class="token punctuation">-</span>p 5000 <span class="token comment" spellcheck="true">#更改端口</span>
-    hexo server <span class="token punctuation">-</span>i 192.168.1.1 <span class="token comment" spellcheck="true">#自定义 IP</span>
+    hexo server <span class="token punctuation">-</span>p 4400 <span class="token comment" spellcheck="true">#更改端口</span>
+    hexo server <span class="token punctuation">-</span>i 192.168.3.10 <span class="token comment" spellcheck="true">#自定义 IP</span>
 
     hexo clean <span class="token comment" spellcheck="true">#清除缓存 网页正常情况下可以忽略此条命令</span>
     hexo g <span class="token comment" spellcheck="true">#生成静态网页</span>
@@ -461,9 +454,6 @@
 <pre class=" language-yaml"><code class="language-yaml">    npm install hexo <span class="token punctuation">-</span>g <span class="token comment" spellcheck="true">#安装  </span>
     npm update hexo <span class="token punctuation">-</span>g <span class="token comment" spellcheck="true">#升级  </span>
     hexo init <span class="token comment" spellcheck="true">#初始化</span></code></pre>
-<h3 id="8-备份hexo代码"><a href="#8-备份hexo代码" class="headerlink" title="8. 备份hexo代码"></a>8. 备份hexo代码</h3><p>对于一个开发人员来说保存和备份代码是非常重要的。使用hexo在githut上搭建博客，仓库里只有生成网页的静态文件，是没有hexo的源文件的，所以如果要换电脑开发写博客的话就会很麻烦。</p>
-<p>首先在本地仓库下的master分支下创建个hexo分支<br> <img src="https://raw.githubusercontent.com/Mandy-cen/Mandy-cen.github.io/hexo/themes/matery/source/images/20190829155537.png" alt>   </p>
-<p>然后将hexo分支设为默认分支，执行git add，git commit -m “提交文件”，git push origin hexo来提交hexo网站源文件；</p>
 <p><img src="https://raw.githubusercontent.com/Mandy-cen/Mandy-cen.github.io/master/favicon.png" alt></p>
 
             </div>
