@@ -132,5 +132,12 @@ $ hexo deploy
     npm update hexo -g #升级  
     hexo init #初始化
 ```
+### 8. 备份hexo代码
+    对于一个开发人员来说保存和备份代码是非常重要的。使用hexo在githut上搭建博客，仓库里只有生成网页的静态文件，是没有hexo的源文件的，所以如果要换电脑开发写博客的话就会很麻烦。
+    
+    首先在本地仓库下的master分支下创建个hexo分支
+    
 
+    然后将hexo分支设为默认分支，执行git add，git commit -m "提交文件"，git push origin hexo来提交hexo网站源文件；
+    
 ![](https://raw.githubusercontent.com/Mandy-cen/Mandy-cen.github.io/master/favicon.png)
