@@ -4,7 +4,8 @@ date: 2019-09-03 10:02:08
 tags: 
     - typeScript
 ---
-### typeScript中的数据类型------------------写ts代码必须制定类型（因为ts会类型校验）
+### typeScript中的数据类型
+注意：写ts代码必须制定类型（因为ts会类型校验）
 > * 布尔类型（boolean）
 > * 数字类型（number）
 > * 字符串类型（string）
