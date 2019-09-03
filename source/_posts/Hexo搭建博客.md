@@ -3,6 +3,7 @@ title: 使用Hexo+hexo-theme-matery搭建一个属于自己的博客
 date: 2019-08-24 16:27:55
 tags:
     - Hexo
+    - hexo-theme-matery
 ---
 
 
