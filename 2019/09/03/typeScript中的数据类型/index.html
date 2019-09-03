@@ -5,7 +5,14 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="typeScript中的数据类型, Mandy">
-    <meta name="description" content="typeScript中的数据类型 | Mandy">
+    <meta name="description" content="typeScript中的数据类型——————写ts代码必须制定类型（因为ts会类型校验）
+
+布尔类型（boolean）
+数字类型（number）
+字符串类型（string）
+数组类型（array）
+元组类型（tuple）
+枚举类型（enum">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -408,7 +415,93 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h3 id="typeScript中的数据类型——————写ts代码必须制定类型（因为ts会类型校验）"><a href="#typeScript中的数据类型——————写ts代码必须制定类型（因为ts会类型校验）" class="headerlink" title="typeScript中的数据类型——————写ts代码必须制定类型（因为ts会类型校验）"></a>typeScript中的数据类型——————写ts代码必须制定类型（因为ts会类型校验）</h3><blockquote>
+<ul>
+<li>布尔类型（boolean）</li>
+<li>数字类型（number）</li>
+<li>字符串类型（string）</li>
+<li>数组类型（array）</li>
+<li>元组类型（tuple）</li>
+<li>枚举类型（enum）</li>
+<li>任意类型（any）</li>
+<li>null 和 undefined</li>
+<li>void类型</li>
+<li>never类型</li>
+</ul>
+</blockquote>
+<h3 id="1-布尔类型"><a href="#1-布尔类型" class="headerlink" title="1.布尔类型"></a>1.布尔类型</h3><pre class=" language-yaml"><code class="language-yaml">var flag<span class="token punctuation">:</span> boolean = true
+flag = false
+console.log('boolean<span class="token punctuation">:</span>'<span class="token punctuation">,</span> flag)</code></pre>
+<h3 id="2-数字类型"><a href="#2-数字类型" class="headerlink" title="2.数字类型"></a>2.数字类型</h3><pre class=" language-yaml"><code class="language-yaml">var num<span class="token punctuation">:</span>number = 123
+num = 666
+console.log('number<span class="token punctuation">:</span>'<span class="token punctuation">,</span> num)
+
+// num = 'typeScript'    <span class="token punctuation">|</span>error</code></pre>
+<h3 id="3-字符串类型"><a href="#3-字符串类型" class="headerlink" title="3.字符串类型"></a>3.字符串类型</h3><pre class=" language-yaml"><code class="language-yaml">var str<span class="token punctuation">:</span>string = 'this is ts'
+str = 'lalala'
+console.log('string<span class="token punctuation">:</span>'<span class="token punctuation">,</span> str)</code></pre>
+<h3 id="4-数组类型-两种方式"><a href="#4-数组类型-两种方式" class="headerlink" title="4.数组类型 两种方式"></a>4.数组类型 两种方式</h3><pre class=" language-yaml"><code class="language-yaml">// ES5定义数组  var arr = <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+
+// 第一种
+var arr1<span class="token punctuation">:</span>number<span class="token punctuation">[</span><span class="token punctuation">]</span> = <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+console.log("arr1<span class="token punctuation">:</span>"<span class="token punctuation">,</span> arr1)
+
+// 第二种
+var arr2<span class="token punctuation">:</span>Array&lt;number<span class="token punctuation">></span> = <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+console.log('arr2<span class="token punctuation">:</span>'<span class="token punctuation">,</span> arr2)</code></pre>
+<h3 id="5-元组类型（属于数组的一种）"><a href="#5-元组类型（属于数组的一种）" class="headerlink" title="5.元组类型（属于数组的一种）"></a>5.元组类型（属于数组的一种）</h3><pre class=" language-yaml"><code class="language-yaml">let tup<span class="token punctuation">:</span><span class="token punctuation">[</span>number<span class="token punctuation">,</span> string<span class="token punctuation">]</span> = <span class="token punctuation">[</span><span class="token number">666</span><span class="token punctuation">,</span> <span class="token string">'str'</span><span class="token punctuation">]</span>
+console.log('tup<span class="token punctuation">:</span>'<span class="token punctuation">,</span> tup)</code></pre>
+<h3 id="6-枚举类型"><a href="#6-枚举类型" class="headerlink" title="6.枚举类型"></a>6.枚举类型</h3><pre class=" language-yaml"><code class="language-yaml">enum Status <span class="token punctuation">{</span>success=200<span class="token punctuation">,</span> error=404<span class="token punctuation">}</span>
+let f<span class="token punctuation">:</span>Status = Status.success
+console.log("Status<span class="token punctuation">:</span>"<span class="token punctuation">,</span> f)
+
+
+enum color <span class="token punctuation">{</span>blue<span class="token punctuation">,</span> red<span class="token punctuation">,</span> <span class="token string">'orange'</span><span class="token punctuation">}</span> // 如果标识符没有赋值 它的值就是下标值
+let idx<span class="token punctuation">:</span>color = color.orange
+console.log('index<span class="token punctuation">:</span>'<span class="token punctuation">,</span> idx)</code></pre>
+<h3 id="7-任意类型"><a href="#7-任意类型" class="headerlink" title="7. 任意类型"></a>7. 任意类型</h3><pre class=" language-yaml"><code class="language-yaml">var any_Data<span class="token punctuation">:</span>any = 123
+any_Data = 'str'
+any_Data = false
+console.log('any_Data<span class="token punctuation">:</span>'<span class="token punctuation">,</span> any_Data)
+// 使用场景
+var box<span class="token punctuation">:</span>any = document.getElementById('box')
+box.style.color = 'red'</code></pre>
+<h3 id="8-null-和-undefined"><a href="#8-null-和-undefined" class="headerlink" title="8. null 和 undefined"></a>8. null 和 undefined</h3><pre class=" language-yaml"><code class="language-yaml">// var a<span class="token punctuation">:</span>number;
+// console.log(a) //输出<span class="token punctuation">:</span>undefined 报错
+
+var b<span class="token punctuation">:</span>undefined;
+console.log('b<span class="token punctuation">:</span>'<span class="token punctuation">,</span> b) //输出undefined 正确
+
+// 一个元素可能是 number <span class="token punctuation">|</span> unll <span class="token punctuation">|</span> undefined
+num = 12345
+console.log(num)</code></pre>
+<h3 id="9-void-类型"><a href="#9-void-类型" class="headerlink" title="9. void 类型"></a>9. void 类型</h3><p>typeScript中的void表示没有任何类型，一般用于定义方法的时候方法没有返回值。</p>
+<pre class=" language-yaml"><code class="language-yaml">// 没有返回值
+function fun()<span class="token punctuation">:</span>void <span class="token punctuation">{</span>
+    console.log('fun')
+<span class="token punctuation">}</span>
+fun ()
+
+// 有返回值
+function fun1()<span class="token punctuation">:</span>number <span class="token punctuation">{</span>
+    return 123
+<span class="token punctuation">}</span></code></pre>
+<h3 id="10-never类型"><a href="#10-never类型" class="headerlink" title="10. never类型"></a>10. never类型</h3><p>其他类型（包括null 和 undefined）的子类型，代表从不会出现的值</p>
+<pre class=" language-yaml"><code class="language-yaml">// 这意味着证明never的变量只能被never类型所赋值
+
+
+// 例如
+var c<span class="token punctuation">:</span>undefined;
+// c = 123 报错
+c = undefined
+
+
+// 用法
+var d<span class="token punctuation">:</span>never;
+d =(()=<span class="token punctuation">></span><span class="token punctuation">{</span>
+    throw new Error('error')
+<span class="token punctuation">}</span>)()</code></pre>
+
             </div>
             <hr/>
 
@@ -625,7 +718,14 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            typeScript中的数据类型——————写ts代码必须制定类型（因为ts会类型校验）
+
+布尔类型（boolean）
+数字类型（number）
+字符串类型（string）
+数组类型（array）
+元组类型（tuple）
+枚举类型（enum
                         
                     </div>
                     <div class="publish-info">
