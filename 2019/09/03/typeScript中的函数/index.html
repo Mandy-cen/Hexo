@@ -424,13 +424,13 @@ var fun4 = function()<span class="token punctuation">:</span>number <span class=
 
 alert(fun4())</code></pre>
 <h3 id="2-ts中定义方法传参"><a href="#2-ts中定义方法传参" class="headerlink" title="2.ts中定义方法传参"></a>2.ts中定义方法传参</h3><p>转入参数类型必须对应, 返回类型也是</p>
-<pre class=" language-yaml"><code class="language-yaml">// 1.函数声明
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 1.函数声明</span>
 function getInfo(name<span class="token punctuation">:</span>string<span class="token punctuation">,</span> age<span class="token punctuation">:</span>number)<span class="token punctuation">:</span>string <span class="token punctuation">{</span>
     return `my name is $<span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token punctuation">,</span> $<span class="token punctuation">{</span>age<span class="token punctuation">}</span> yeas old`
 <span class="token punctuation">}</span>
 
 alert(getInfo('mandy'<span class="token punctuation">,</span> 18))
-// 2.匿名函数
+<span class="token comment" spellcheck="true"># 2.匿名函数</span>
 var getInfo2 = function (name<span class="token punctuation">:</span> string<span class="token punctuation">,</span> <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token key atrule">number)</span><span class="token punctuation">:</span> string<span class="token punctuation">{</span>
     return `my name is $<span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token punctuation">,</span> $<span class="token punctuation">{</span>age<span class="token punctuation">}</span> yeas old`
 <span class="token punctuation">}</span>
@@ -672,31 +672,32 @@ alert(getInfo5(20))</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/03/typeScript中的函数/">
+                <a href="/2019/09/04/typeScript的继承/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="typeScript中的函数">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="typeScript的继承">
                         
-                        <span class="card-title">typeScript中的函数</span>
+                        <span class="card-title">typeScript的继承</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ES5中函数的定义方法函数声明function run () { return &#39;fun&#39;}匿名函数var fun = function () { return &#39;fun&#39;}
-1.ts中定义函数的声明方法定义
+                            1. 定义类class Person {
+    name: string  # 属性 前面省略了public关键词
+    constructor (name: string) { # 构造函数 实例化的时候触发的方法
+        t
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -705,7 +706,6 @@ alert(getInfo5(20))</code></pre>
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
