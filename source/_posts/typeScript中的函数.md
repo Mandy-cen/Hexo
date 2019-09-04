@@ -32,13 +32,13 @@ alert(fun4())
 ### 2.ts中定义方法传参
 转入参数类型必须对应, 返回类型也是
 ```yaml
-// 1.函数声明
+# 1.函数声明
 function getInfo(name:string, age:number):string {
     return `my name is ${name}, ${age} yeas old`
 }
 
 alert(getInfo('mandy', 18))
-// 2.匿名函数
+# 2.匿名函数
 var getInfo2 = function (name: string, age: number): string{
     return `my name is ${name}, ${age} yeas old`
 }
