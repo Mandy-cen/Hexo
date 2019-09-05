@@ -1,5 +1,5 @@
 ---
-title: typeScript中的函数
+title: typeScript中的函数 ----笔记
 date: 2019-09-03 15:15:11
 tags:
     - typeScript

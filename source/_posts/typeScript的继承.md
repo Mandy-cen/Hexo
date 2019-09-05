@@ -1,5 +1,5 @@
 ---
-title: typeScript的继承
+title: typeScript的继承 ----笔记
 date: 2019-09-04 11:41:32
 tags:
     - typeScript

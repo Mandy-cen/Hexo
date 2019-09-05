@@ -1,5 +1,5 @@
 ---
-title: typeScript的接口
+title: typeScript的接口 ----笔记
 date: 2019-09-04 17:54:39
 tags:
     - typeScript
