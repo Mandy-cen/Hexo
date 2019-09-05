@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="typeScript的泛型, Mandy">
-    <meta name="description" content="typeScript的泛型 | Mandy">
+    <meta name="keywords" content="typeScript的泛型 ----笔记, Mandy">
+    <meta name="description" content="我们不仅要创建一致的定义良好的API，同时也要考虑可重用性。组件不仅能够支持当前的数据类型，同时也能支持未来的数据类型，这在创建大型系统时为你提供了十分灵活的功能。在像c#和java这样的语言中，可以使用泛型来创建可重用的组件，一个组件可以">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>typeScript的泛型 | Mandy</title>
+    <title>typeScript的泛型 ----笔记 | Mandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +260,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        typeScript的泛型
+                        typeScript的泛型 ----笔记
                     </div>
                 </div>
             </div>
@@ -408,134 +408,117 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>我们不仅要创建一致的定义良好的API，同时也要考虑可重用性。组件不仅能够支持当前的数据类型，同时也能支持未来的数据类型，这在创建大型系统时为你提供了十分灵活的功能。<br>在像c#和java这样的语言中，可以使用泛型来创建可重用的组件，一个组件可以支持多种类型的数据。这样用户就可以以自己的数据类型来使用组件。<br>通俗理解：泛型就是解决 类 接口 方法的复用性、以及对不特定数据类型的支持</p>
+<h3 id="1-泛型的定义"><a href="#1-泛型的定义" class="headerlink" title="1.泛型的定义"></a>1.泛型的定义</h3><pre class=" language-yaml"><code class="language-yaml">首先看一下ts函数的定义
+function getData(value<span class="token punctuation">:</span> <span class="token key atrule">string)</span><span class="token punctuation">:</span> string <span class="token punctuation">{</span> // 传入值和返回值都限制了string类型
+    return 'str'
+<span class="token punctuation">}</span>
+
+需要同时返回string类型和number类型时   any可以解决这个问题
+
+function getData (value<span class="token punctuation">:</span> any)<span class="token punctuation">:</span>any <span class="token punctuation">{</span> // 传入参数类型和返回值类型可以不一致
+    return value
+<span class="token punctuation">}</span>
+
+getData(123)
+getData('str')
+
+但是用了any就代表着放弃了类型的检查，这时当我们需要传入什么，就返回什么类型的数据就行不通了
+这个问题可以通过泛型类实现， 它可以支持不特定的数据类型。
+
+
+function getData &lt;T<span class="token punctuation">></span>(value<span class="token punctuation">:</span> <span class="token key atrule">T)</span><span class="token punctuation">:</span> T<span class="token punctuation">{</span> //T表示泛型（也可以取其他名字），具体什么类型是调用这个方法的时候决定的
+    return value
+<span class="token punctuation">}</span>
+
+// getData&lt;number<span class="token punctuation">></span>('eeee') //错误写法
+getData&lt;number<span class="token punctuation">></span>(123) //错误写法
+
+当然，如果想返回任意类型的值可以用any
+function getData&lt;T<span class="token punctuation">></span>(value<span class="token punctuation">:</span> T)<span class="token punctuation">:</span>any <span class="token punctuation">{</span>
+    return '11222'
+<span class="token punctuation">}</span>
+getData&lt;number<span class="token punctuation">></span>(123);// 传入参数必须是number</code></pre>
+<h3 id="2-泛型类"><a href="#2-泛型类" class="headerlink" title="2. 泛型类"></a>2. 泛型类</h3><p>比如有最小堆算法，需要同时支持返回数字和字符串两种类型。通过类的泛型来实现</p>
+<pre class=" language-yaml"><code class="language-yaml">
+class myClass <span class="token punctuation">{</span>
+    public list<span class="token punctuation">:</span> number<span class="token punctuation">[</span><span class="token punctuation">]</span> = <span class="token punctuation">[</span><span class="token punctuation">]</span>;
+    add (num<span class="token punctuation">:</span> number)<span class="token punctuation">{</span>
+        this.list.push(num)
+    <span class="token punctuation">}</span>
+
+    min () <span class="token punctuation">:</span> number<span class="token punctuation">{</span>
+       return Math.min.apply(Math<span class="token punctuation">,</span> this.list)
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+var m = new myClass()
+m.add(2);
+m.add(3);
+m.add(5);
+m.add(5);
+m.add(7);
+m.add(8);
+alert(m.min()) //输出了最小值
+
+
+class myClass&lt;T<span class="token punctuation">></span> <span class="token punctuation">{</span>
+    public list<span class="token punctuation">:</span>T<span class="token punctuation">[</span><span class="token punctuation">]</span> = <span class="token punctuation">[</span><span class="token punctuation">]</span>;
+    add (value<span class="token punctuation">:</span> <span class="token key atrule">T)</span><span class="token punctuation">:</span> void <span class="token punctuation">{</span>
+        this.list.push(value)
+    <span class="token punctuation">}</span>
+    min () <span class="token punctuation">:</span> number <span class="token punctuation">{</span>
+        return Math.max.apply(Math<span class="token punctuation">,</span> this.list)
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+var m = new myClass&lt;number<span class="token punctuation">></span>() //实例化，并且指定了泛型T的类型为number
+m.add(2);
+m.add(3);
+m.add(5);
+m.add(5);
+m.add(7);
+m.add(8);
+alert(m.min()) //输出了最大值
+
+</code></pre>
+<h3 id="3-泛型接口"><a href="#3-泛型接口" class="headerlink" title="3.泛型接口"></a>3.泛型接口</h3><pre class=" language-yaml"><code class="language-yaml">
+回顾接口定义
+interface Config <span class="token punctuation">{</span>
+    (value1<span class="token punctuation">:</span>string<span class="token punctuation">,</span> <span class="token key atrule">value2</span><span class="token punctuation">:</span> <span class="token key atrule">string)</span><span class="token punctuation">:</span> string
+<span class="token punctuation">}</span>
+
+var setData<span class="token punctuation">:</span> Config = function (val1<span class="token punctuation">:</span> string<span class="token punctuation">,</span> <span class="token key atrule">val2</span><span class="token punctuation">:</span> <span class="token key atrule">string)</span><span class="token punctuation">:</span> string <span class="token punctuation">{</span>
+    return val1 + val2
+<span class="token punctuation">}</span>
+
+<span class="token key atrule">alert(setData("name</span><span class="token punctuation">:</span> "<span class="token punctuation">,</span> "mandy"))
+
+泛型接口
+
+interface ConfigFn <span class="token punctuation">{</span>
+    <span class="token key atrule">&lt;T>(val</span><span class="token punctuation">:</span> <span class="token key atrule">T)</span><span class="token punctuation">:</span> T;
+<span class="token punctuation">}</span>
+var getData<span class="token punctuation">:</span> ConfigFn  = function&lt;T<span class="token punctuation">></span>(value<span class="token punctuation">:</span> <span class="token key atrule">T)</span><span class="token punctuation">:</span> T<span class="token punctuation">{</span>
+    return value
+<span class="token punctuation">}</span>
+getData&lt;string<span class="token punctuation">></span>('str')
+
+
+interface ConfigFn&lt;T<span class="token punctuation">></span> <span class="token punctuation">{</span>
+    (value<span class="token punctuation">:</span>T)<span class="token punctuation">:</span>T
+<span class="token punctuation">}</span>
+
+function getData &lt;T<span class="token punctuation">></span>(value<span class="token punctuation">:</span> <span class="token key atrule">T)</span><span class="token punctuation">:</span> T <span class="token punctuation">{</span>
+    return value
+<span class="token punctuation">}</span>
+var myData<span class="token punctuation">:</span>ConfigFn &lt;string<span class="token punctuation">></span> = getData;
+myData('2344')
+</code></pre>
+
             </div>
             <hr/>
 
-            
-            <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
-
-    #reward .reward-link {
-        font-size: 1.88rem;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 320px;
-        height: 350px;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .close:hover {
-        color: #ef5350;
-        transform: scale(1.3);
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
-        -o-transform:scale(1.3);
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 210px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-content ul {
-        padding-left: 0 !important;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        background-color: #ccc;
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff !important;
-        background-color: #22AB38 !important;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff !important;
-        background-color: #019FE8 !important;
-    }
-
-    .reward-tabs .reward-img {
-        width: 210px;
-        height: 210px;
-    }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
             
 
             <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
@@ -566,7 +549,7 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《typeScript的泛型》
+                    《typeScript的泛型 ----笔记》
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/04/typeScript的泛型/" property="cc:attributionName"
                rel="cc:attributionURL">
@@ -617,15 +600,15 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="typeScript的泛型">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="typeScript的泛型 ----笔记">
                         
-                        <span class="card-title">typeScript的泛型</span>
+                        <span class="card-title">typeScript的泛型 ----笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            我们不仅要创建一致的定义良好的API，同时也要考虑可重用性。组件不仅能够支持当前的数据类型，同时也能支持未来的数据类型，这在创建大型系统时为你提供了十分灵活的功能。在像c#和java这样的语言中，可以使用泛型来创建可重用的组件，一个组件可以
                         
                     </div>
                     <div class="publish-info">
@@ -663,9 +646,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="typeScript的接口">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="typeScript的接口 ----笔记">
                         
-                        <span class="card-title">typeScript的接口</span>
+                        <span class="card-title">typeScript的接口 ----笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -889,6 +872,8 @@ $(function () {
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
+
+    <script src="/libs/others/clicklove.js"></script>
 
 
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
