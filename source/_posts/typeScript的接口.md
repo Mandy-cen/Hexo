@@ -1,10 +1,10 @@
 ---
-title: typeScript的接口 ----笔记
+title: typeScript的接口
 date: 2019-09-04 17:54:39
 tags:
     - typeScript
 ---
-在面向对象的编程中，接口是一种规范的定义，它定义了行为和动作的规范。在程序设计里面，接口起到了一定限制和规范的作用。接口定义了某一批类所需要遵守的规范，接口不关心这些类的内部状态数据，也不关心这些类里方法的实现细节，它只规定这批类里必须提供某些方法，提供这些方法就可以满足实际需要。
+在面向对象的编程中，接口是一种规范的定义，它定义了行为和动作的规范。
 
 > * 属性接口
 > * 函数类型接口
@@ -90,6 +90,7 @@ ajax({
     dataType: 'json'
 })
 ```
+
 ### 2.函数类型接口
 对方法传入的参数  以及返回值进行约束
 ```yaml
@@ -132,7 +133,7 @@ interface Animal {
     eat(str: string): void;
 }
 
-class Dog implements Animal {
+class Dog implements Animal { # 实现接口
     name: string;
     constructor (name: string) {
         this.name = name

@@ -1,5 +1,5 @@
 ---
-title: typeScript中的数据类型 ----笔记
+title: typeScript中的数据类型
 date: 2019-09-03 10:02:08
 tags: 
     - typeScript
@@ -80,9 +80,6 @@ any_Data = 'str'
 any_Data = false
 console.log('any_Data:', any_Data)
 
-# 使用场景
-var box: any = document.getElementById('box')
-box.style.color = 'red'
 ```
 
 ### 8. null 和 undefined
@@ -119,7 +116,6 @@ function fun1(): number {
 其他类型（包括null 和 undefined）的子类型，代表从不会出现的值
 ```yaml
 # 这意味着证明never的变量只能被never类型所赋值
-
 
 # 例如
 var c: undefined;

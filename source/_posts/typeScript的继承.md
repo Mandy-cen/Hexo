@@ -1,5 +1,5 @@
 ---
-title: typeScript的继承 ----笔记
+title: typeScript的继承
 date: 2019-09-04 11:41:32
 tags:
     - typeScript
@@ -106,77 +106,6 @@ w.work()
 # 公有属性类外部访问
 var p = new Person("张三")
 alert(p.name)
-
-```
-
-> * protected 保护类
-
-```yaml
-class Person{
-    protected name: string #公有属性
-    constructor (name: string) {
-        this.name = name
-    }
-
-    run (): string {
-        return `${ this.name } 在运动---------父类`
-    }
-}
-
-class Web extends Person {
-    constructor (name: string) {
-        super(name)
-    }
-
-    work () {
-        alert(`${ this.name } 在工作`)
-    }
-
-    run (): string {
-        return `${ this.name } --------- 子类`
-    }
-}
-# 当前类 、子类
-var w = new Web('李四')
-alert(w.run())
-
-# 类外部
-var p = new Person('王五')
-alert(p.name) # 报错
-
-```
-
-> * private
-
-```yaml
-class Person{
-    private name: string #公有属性
-    constructor (name: string){
-        this.name = name
-    }
-
-    run(): string {
-        return `${ this.name } 在运动---------父类`
-    }
-}
-
-class Web extends Person {
-    constructor (name: string) {
-        super(name)
-    }
-
-    work() {
-        alert(`${ this.name } 在工作`) # 当name为私有属性的时候这里报错
-    }
-}
-
-# 类外部
-var p = new Person('张三')
-alert(p.name) # 报错了
-
-#子类
-var w = new Web ('李四')
-w.work() #访问不到
 
 ```
 

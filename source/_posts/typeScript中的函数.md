@@ -1,5 +1,5 @@
 ---
-title: typeScript中的函数 ----笔记
+title: typeScript中的函数
 date: 2019-09-03 15:15:11
 tags:
     - typeScript
@@ -43,7 +43,7 @@ var getInfo2 = function (name: string, age: number): string{
     return `my name is ${name}, ${age} yeas old`
 }
 
-alert(getInfo2('mandy', 18))
+alert(getInfo2('mandy', 16))
 ```
 ### 3.没有返回值的方法
 ```yaml
@@ -87,9 +87,7 @@ alert(sun(1,2,3,4))
 ```
 
 ### 7.函数的重载
-java中方法的重载：重载指的是两个或者两个以上同名函数，但他们的参数不一样，这时会出现函数重载的情况
-typeScript中的重载：通过为同一个函数提供多个函数类型定义来试下多种功能的目的
-ts为了兼容es5 以及es6重载的写法和java中有区别
+通过为同一个函数提供多个函数类型定义来试下多种功能的目的
 ```yaml
 function getInfo5 (name:string):string;
 function getInfo5 (age:number):number;

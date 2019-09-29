@@ -1,5 +1,5 @@
 ---
-title: typeScript的泛型 ----笔记
+title: typeScript的泛型
 date: 2019-09-04 18:54:39
 tags:
     - typeScript
@@ -54,7 +54,13 @@ class myClass {
     }
 
     min () : number{
-       return Math.min.apply(Math, this.list)
+        var min=arr[0];
+        list.forEach((value)=>{
+            if(value<min){
+                min=value
+            }
+        })
+        return min
     }
 }
 var m = new myClass()
@@ -73,7 +79,13 @@ class myClass<T> {
         this.list.push(value)
     }
     min () : number {
-        return Math.max.apply(Math, this.list)
+        var min=arr[0];
+        list.forEach((value)=>{
+            if(value<min){
+                min=value
+            }
+        })
+        return min
     }
 }
 

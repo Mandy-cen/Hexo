@@ -119,6 +119,3 @@ deploy:
     npm update hexo -g #升级  
     hexo init #初始化
 ```
-
-    
-![](https://raw.githubusercontent.com/Mandy-cen/Mandy-cen.github.io/master/favicon.png)
