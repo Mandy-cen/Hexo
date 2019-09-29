@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="typeScript的泛型 ----笔记, Mandy">
+    <meta name="keywords" content="typeScript的泛型, Mandy">
     <meta name="description" content="我们不仅要创建一致的定义良好的API，同时也要考虑可重用性。组件不仅能够支持当前的数据类型，同时也能支持未来的数据类型，这在创建大型系统时为你提供了十分灵活的功能。在像c#和java这样的语言中，可以使用泛型来创建可重用的组件，一个组件可以">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>typeScript的泛型 ----笔记 | Mandy</title>
+    <title>typeScript的泛型 | Mandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +260,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        typeScript的泛型 ----笔记
+                        typeScript的泛型
                     </div>
                 </div>
             </div>
@@ -448,7 +448,13 @@ class myClass <span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
 
     min () <span class="token punctuation">:</span> number<span class="token punctuation">{</span>
-       return Math.min.apply(Math<span class="token punctuation">,</span> this.list)
+        var min=arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>;
+        list.forEach((value)=<span class="token punctuation">></span><span class="token punctuation">{</span>
+            if(value&lt;min)<span class="token punctuation">{</span>
+                min=value
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>)
+        return min
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 var m = new myClass()
@@ -467,7 +473,13 @@ class myClass&lt;T<span class="token punctuation">></span> <span class="token pu
         this.list.push(value)
     <span class="token punctuation">}</span>
     min () <span class="token punctuation">:</span> number <span class="token punctuation">{</span>
-        return Math.max.apply(Math<span class="token punctuation">,</span> this.list)
+        var min=arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>;
+        list.forEach((value)=<span class="token punctuation">></span><span class="token punctuation">{</span>
+            if(value&lt;min)<span class="token punctuation">{</span>
+                min=value
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>)
+        return min
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
@@ -549,7 +561,7 @@ myData('2344')
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《typeScript的泛型 ----笔记》
+                    《typeScript的泛型》
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/04/typeScript的泛型/" property="cc:attributionName"
                rel="cc:attributionURL">
@@ -600,9 +612,9 @@ myData('2344')
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="typeScript的泛型 ----笔记">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="typeScript的泛型">
                         
-                        <span class="card-title">typeScript的泛型 ----笔记</span>
+                        <span class="card-title">typeScript的泛型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -646,15 +658,26 @@ myData('2344')
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="typeScript的接口 ----笔记">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="typeScript的接口">
                         
-                        <span class="card-title">typeScript的接口 ----笔记</span>
+                        <span class="card-title">typeScript的接口</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在面向对象的编程中，接口是一种规范的定义，它定义了行为和动作的规范。在程序设计里面，接口起到了一定限制和规范的作用。接口定义了某一批类所需要遵守的规范，接口不关心这些类的内部状态数据，也不关心这些类里方法的实现细节，它只规定这批类里必须提供
+                            在面向对象的编程中，接口是一种规范的定义，它定义了行为和动作的规范。
+
+
+属性接口
+函数类型接口
+可索引接口
+类类型接口
+接口扩展
+复杂例子
+
+
+1. 属性接口 对json的约束function printLabel(labelInfo: 
                         
                     </div>
                     <div class="publish-info">

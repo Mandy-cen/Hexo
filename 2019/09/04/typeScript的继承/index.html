@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="typeScript的继承 ----笔记, Mandy">
+    <meta name="keywords" content="typeScript的继承, Mandy">
     <meta name="description" content="1. 定义类class Person {
     name: string  # 属性 前面省略了public关键词
     constructor (name: string) { # 构造函数 实例化的时候触发的方法
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>typeScript的继承 ----笔记 | Mandy</title>
+    <title>typeScript的继承 | Mandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +263,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        typeScript的继承 ----笔记
+                        typeScript的继承
                     </div>
                 </div>
             </div>
@@ -506,77 +506,6 @@ w.work()
 var p = new Person("张三")
 alert(p.name)
 </code></pre>
-<blockquote>
-<ul>
-<li>protected 保护类</li>
-</ul>
-</blockquote>
-<pre class=" language-yaml"><code class="language-yaml">class Person<span class="token punctuation">{</span>
-    protected name<span class="token punctuation">:</span> string <span class="token comment" spellcheck="true">#公有属性</span>
-    constructor (name<span class="token punctuation">:</span> string) <span class="token punctuation">{</span>
-        this.name = name
-    <span class="token punctuation">}</span>
-
-    run ()<span class="token punctuation">:</span> string <span class="token punctuation">{</span>
-        return `$<span class="token punctuation">{</span> this.name <span class="token punctuation">}</span> 在运动<span class="token punctuation">---</span><span class="token punctuation">---</span><span class="token punctuation">---</span>父类`
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-class Web extends Person <span class="token punctuation">{</span>
-    constructor (name<span class="token punctuation">:</span> string) <span class="token punctuation">{</span>
-        super(name)
-    <span class="token punctuation">}</span>
-
-    work () <span class="token punctuation">{</span>
-        alert(`$<span class="token punctuation">{</span> this.name <span class="token punctuation">}</span> 在工作`)
-    <span class="token punctuation">}</span>
-
-    run ()<span class="token punctuation">:</span> string <span class="token punctuation">{</span>
-        return `$<span class="token punctuation">{</span> this.name <span class="token punctuation">}</span> <span class="token punctuation">---</span><span class="token punctuation">---</span><span class="token punctuation">---</span> 子类`
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true"># 当前类 、子类</span>
-var w = new Web('李四')
-alert(w.run())
-
-<span class="token comment" spellcheck="true"># 类外部</span>
-var p = new Person('王五')
-alert(p.name) <span class="token comment" spellcheck="true"># 报错</span>
-</code></pre>
-<blockquote>
-<ul>
-<li>private</li>
-</ul>
-</blockquote>
-<pre class=" language-yaml"><code class="language-yaml">class Person<span class="token punctuation">{</span>
-    private name<span class="token punctuation">:</span> string <span class="token comment" spellcheck="true">#公有属性</span>
-    constructor (name<span class="token punctuation">:</span> string)<span class="token punctuation">{</span>
-        this.name = name
-    <span class="token punctuation">}</span>
-
-    <span class="token key atrule">run()</span><span class="token punctuation">:</span> string <span class="token punctuation">{</span>
-        return `$<span class="token punctuation">{</span> this.name <span class="token punctuation">}</span> 在运动<span class="token punctuation">---</span><span class="token punctuation">---</span><span class="token punctuation">---</span>父类`
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-class Web extends Person <span class="token punctuation">{</span>
-    constructor (name<span class="token punctuation">:</span> string) <span class="token punctuation">{</span>
-        super(name)
-    <span class="token punctuation">}</span>
-
-    work() <span class="token punctuation">{</span>
-        alert(`$<span class="token punctuation">{</span> this.name <span class="token punctuation">}</span> 在工作`) <span class="token comment" spellcheck="true"># 当name为私有属性的时候这里报错</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment" spellcheck="true"># 类外部</span>
-var p = new Person('张三')
-alert(p.name) <span class="token comment" spellcheck="true"># 报错了</span>
-
-<span class="token comment" spellcheck="true">#子类</span>
-var w = new Web ('李四')
-w.work() <span class="token comment" spellcheck="true">#访问不到</span>
-</code></pre>
 <h3 id="4-静态属性-静态方法"><a href="#4-静态属性-静态方法" class="headerlink" title="4.静态属性  静态方法"></a>4.静态属性  静态方法</h3><pre class=" language-yaml"><code class="language-yaml">class Person <span class="token punctuation">{</span>
     public name<span class="token punctuation">:</span> string
     public age<span class="token punctuation">:</span> number = 20
@@ -684,7 +613,7 @@ dog.eat()
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《typeScript的继承 ----笔记》
+                    《typeScript的继承》
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/04/typeScript的继承/" property="cc:attributionName"
                rel="cc:attributionURL">
@@ -734,15 +663,26 @@ dog.eat()
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="typeScript的接口 ----笔记">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="typeScript的接口">
                         
-                        <span class="card-title">typeScript的接口 ----笔记</span>
+                        <span class="card-title">typeScript的接口</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在面向对象的编程中，接口是一种规范的定义，它定义了行为和动作的规范。在程序设计里面，接口起到了一定限制和规范的作用。接口定义了某一批类所需要遵守的规范，接口不关心这些类的内部状态数据，也不关心这些类里方法的实现细节，它只规定这批类里必须提供
+                            在面向对象的编程中，接口是一种规范的定义，它定义了行为和动作的规范。
+
+
+属性接口
+函数类型接口
+可索引接口
+类类型接口
+接口扩展
+复杂例子
+
+
+1. 属性接口 对json的约束function printLabel(labelInfo: 
                         
                     </div>
                     <div class="publish-info">
@@ -779,9 +719,9 @@ dog.eat()
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="typeScript中的函数 ----笔记">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="typeScript中的函数">
                         
-                        <span class="card-title">typeScript中的函数 ----笔记</span>
+                        <span class="card-title">typeScript中的函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
