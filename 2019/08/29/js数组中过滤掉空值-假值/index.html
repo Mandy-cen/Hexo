@@ -437,45 +437,6 @@ arr.filter(Boolean)
 
             
 
-    <div class="reprint" id="reprint-statement">
-        <p class="reprint-tip">
-            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
-            <span>转载规则</span>
-        </p>
-        
-            <div class="center-align">
-                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt=""
-                         style="border-width:0"
-                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
-                </a>
-            </div>
-            <br/>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-                  property="dct:title" rel="dct:type">
-                    《js数组中过滤掉空值,假值》
-                </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/29/js数组中过滤掉空值-假值/" property="cc:attributionName"
-               rel="cc:attributionURL">
-                Mandy Cen
-            </a> 采用
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                知识共享署名 4.0 国际许可协议
-            </a>进行许可。
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
 
         </div>
     </div>
@@ -495,38 +456,31 @@ arr.filter(Boolean)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/09/03/typeScript中的数据类型/">
+                <a href="/2019/08/29/js数组中过滤掉空值-假值/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="typeScript中的数据类型">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="js数组中过滤掉空值,假值">
                         
-                        <span class="card-title">typeScript中的数据类型</span>
+                        <span class="card-title">js数组中过滤掉空值,假值</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            typeScript中的数据类型注意：写ts代码必须制定类型（因为ts会类型校验）
-
-
-布尔类型（boolean）
-数字类型（number）
-字符串类型（string）
-数组类型（array）
-元组类型（tuple）
-枚举类型（enum）
-
+                            利用Array的filter过滤掉数组里的空值假值（false, undefined, NaN, null, 0）
+arr = [undefined, undefined, 0, 1, '', 'false', false, true, n
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -535,11 +489,12 @@ arr.filter(Boolean)
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/typeScript/" target="_blank">
-                        <span class="chip bg-color">typeScript</span>
+                    <a href="/tags/javaScript/" target="_blank">
+                        <span class="chip bg-color">javaScript</span>
                     </a>
                     
                 </div>
