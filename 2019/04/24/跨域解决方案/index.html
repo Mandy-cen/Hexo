@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="js数组中过滤掉空值,假值, Mandy">
-    <meta name="description" content="利用Array的filter过滤掉数组里的空值假值（false, undefined, NaN, null, 0）
-arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
+    <meta name="keywords" content="跨域解决方案, Mandy">
+    <meta name="description" content="同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。
+所以就有了跨域的说法，解决跨域的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>js数组中过滤掉空值,假值 | Mandy</title>
+    <title>跨域解决方案 | Mandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +261,13 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        js数组中过滤掉空值,假值
+                        跨域解决方案
                     </div>
                 </div>
             </div>
@@ -378,8 +378,20 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/javaScript/" target="_blank">
-                                <span class="chip bg-color">javaScript</span>
+                            <a href="/tags/script/" target="_blank">
+                                <span class="chip bg-color">script</span>
+                            </a>
+                        
+                            <a href="/tags/Node/" target="_blank">
+                                <span class="chip bg-color">Node</span>
+                            </a>
+                        
+                            <a href="/tags/nginx/" target="_blank">
+                                <span class="chip bg-color">nginx</span>
+                            </a>
+                        
+                            <a href="/tags/iframe/" target="_blank">
+                                <span class="chip bg-color">iframe</span>
                             </a>
                         
                     </div>
@@ -393,7 +405,7 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-29
+                    2019-04-24
                 </div>
 
                 
@@ -409,17 +421,17 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>利用Array的filter过滤掉数组里的空值假值（false, undefined, NaN, null, 0）</p>
-<pre class=" language-yaml"><code class="language-yaml">arr = <span class="token punctuation">[</span>undefined<span class="token punctuation">,</span> undefined<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'false'</span><span class="token punctuation">,</span> <span class="token boolean important">false</span><span class="token punctuation">,</span> <span class="token boolean important">true</span><span class="token punctuation">,</span> <span class="token null important">null</span><span class="token punctuation">,</span> <span class="token string">'null'</span><span class="token punctuation">]</span>
-
-arr.filter(e =<span class="token punctuation">></span> e)
-
-或者
-
-arr.filter(Boolean)
-</code></pre>
-<p>结果：<code>[1, &quot;false&quot;, true, &quot;null&quot;]</code></p>
-
+                <p>同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。</p>
+<p>所以就有了跨域的说法，解决跨域的方法很多，如下：</p>
+<h1 id="Jsonp"><a href="#Jsonp" class="headerlink" title="Jsonp"></a>Jsonp</h1><p> 利用 <script> 标签没有跨域限制的漏洞，网页可以得到从其他来源动态产生的 JSON 数据。JSONP请求一定需要对方的服务器做支持才可以。</p>
+<h1 id="cors"><a href="#cors" class="headerlink" title="cors"></a>cors</h1><p> CORS 需要浏览器和后端同时支持。IE 8 和 9 需要通过 XDomainRequest 来实现。<br> 服务端设置 Access-Control-Allow-Origin 就可以开启 CORS。</p>
+<h1 id="Node中间件代理-两次跨域"><a href="#Node中间件代理-两次跨域" class="headerlink" title="Node中间件代理(两次跨域)"></a>Node中间件代理(两次跨域)</h1><p>  实现原理：同源策略是浏览器需要遵循的标准，而如果是服务器向服务器请求就无需遵循同源策略。</p>
+<h1 id="nginx反向代理"><a href="#nginx反向代理" class="headerlink" title="nginx反向代理"></a>nginx反向代理</h1><p>实现原理类似于Node中间件代理，需要你搭建一个中转nginx服务器，用于转发请求。</p>
+<h1 id="location-hash-iframe"><a href="#location-hash-iframe" class="headerlink" title="location.hash + iframe"></a>location.hash + iframe</h1><p>实现原理： a.html欲与c.html跨域相互通信，通过中间页b.html来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间直接js访问来通信</p>
+<h1 id="document-domain-iframe"><a href="#document-domain-iframe" class="headerlink" title="document.domain + iframe"></a>document.domain + iframe</h1><p>  该方式只能用于二级域名相同的情况下，比如 a.test.com 和 b.test.com 适用于该方式。<br>  只需要给页面添加 document.domain ='test.com' 表示二级域名都相同就可以实现跨域</p>
+<h1 id="window-name-iframe"><a href="#window-name-iframe" class="headerlink" title="window.name + iframe"></a>window.name + iframe</h1><p>   window.name属性的独特之处：name值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的 name 值（2MB）。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>CORS支持所有类型的HTTP请求，是跨域HTTP请求的根本解决方案<br>JSONP只支持GET请求，JSONP的优势在于支持老式浏览器，以及可以向不支持CORS的网站请求数据。<br>不管是Node中间件代理还是nginx反向代理，主要是通过同源策略对服务器不加限制。<br>日常工作中，用得比较多的跨域方案是cors和nginx反向代理</p>
+</script></p>
             </div>
             <hr/>
 
@@ -460,25 +472,25 @@ arr.filter(Boolean)
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/11/前端性能优化/">
+                <a href="/2019/04/24/DOM事件机制/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="前端性能优化">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="事件">
                         
-                        <span class="card-title">前端性能优化</span>
+                        <span class="card-title">事件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近看了幕课网 web 前端性能优化的课程，为避免以后忘记，总结了下笔记：
-什么是了解C/S架构和B/S架构？C/S结构，即Client/Server(客户机/服务器)结构，是通过将任务合理分配到Client端和Server端，降低了系统的
+                            DOM事件模型分为捕获和冒泡。一个事件发生后，会在子元素和父元素之间传播（propagation）。这种传播分成三个阶段。（1）捕获阶段：事件从window对象自上而下向目标节点传播的阶段；
+（2）目标阶段：真正的目标节点正在处理事件的阶段
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-11
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
                         </span>
                         <span class="publish-author">
                             
@@ -491,24 +503,12 @@ arr.filter(Boolean)
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/DOM/" target="_blank">
+                        <span class="chip bg-color">DOM</span>
+                    </a>
+                    
                     <a href="/tags/html/" target="_blank">
                         <span class="chip bg-color">html</span>
-                    </a>
-                    
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
-                    </a>
-                    
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
-                    </a>
-                    
-                    <a href="/tags/CS/" target="_blank">
-                        <span class="chip bg-color">CS</span>
-                    </a>
-                    
-                    <a href="/tags/BS/" target="_blank">
-                        <span class="chip bg-color">BS</span>
                     </a>
                     
                 </div>
@@ -522,25 +522,24 @@ arr.filter(Boolean)
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/24/Hexo搭建博客/">
+                <a href="/2019/04/24/防抖和节流/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="使用Hexo+hexo-theme-matery搭建一个属于自己的博客">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="节流-未完成">
                         
-                        <span class="card-title">使用Hexo+hexo-theme-matery搭建一个属于自己的博客</span>
+                        <span class="card-title">节流-未完成</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近无意发现Hexo博客框架，官网介绍Hexo是一个快速、简洁且高效的博客框架。想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
-1. 安装 Hexo$ npm install -g hex
+                            function debounce(fn, wait, immediate) {    let timmerId = null;    wait =+ wait || 0;    if(typeof fn !== ‘function’) {
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
                             </span>
                         <span class="publish-author">
                             
@@ -553,12 +552,20 @@ arr.filter(Boolean)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/script/" target="_blank">
+                        <span class="chip bg-color">script</span>
                     </a>
                     
-                    <a href="/tags/hexo-theme-matery/" target="_blank">
-                        <span class="chip bg-color">hexo-theme-matery</span>
+                    <a href="/tags/Node/" target="_blank">
+                        <span class="chip bg-color">Node</span>
+                    </a>
+                    
+                    <a href="/tags/nginx/" target="_blank">
+                        <span class="chip bg-color">nginx</span>
+                    </a>
+                    
+                    <a href="/tags/iframe/" target="_blank">
+                        <span class="chip bg-color">iframe</span>
                     </a>
                     
                 </div>

@@ -4,9 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="js数组中过滤掉空值,假值, Mandy">
-    <meta name="description" content="利用Array的filter过滤掉数组里的空值假值（false, undefined, NaN, null, 0）
-arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
+    <meta name="keywords" content="深拷贝和浅拷贝, Mandy">
+    <meta name="description" content="浅拷贝的实现方式1.Object.assign()Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。但是 Object.assign()进行的是浅拷贝，拷贝的是对象的属性的引用，而不">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>js数组中过滤掉空值,假值 | Mandy</title>
+    <title>深拷贝和浅拷贝 | Mandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +260,13 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        js数组中过滤掉空值,假值
+                        深拷贝和浅拷贝
                     </div>
                 </div>
             </div>
@@ -378,8 +377,8 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/javaScript/" target="_blank">
-                                <span class="chip bg-color">javaScript</span>
+                            <a href="/tags/js/" target="_blank">
+                                <span class="chip bg-color">js</span>
                             </a>
                         
                     </div>
@@ -393,7 +392,7 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-29
+                    2019-04-16
                 </div>
 
                 
@@ -409,16 +408,24 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>利用Array的filter过滤掉数组里的空值假值（false, undefined, NaN, null, 0）</p>
-<pre class=" language-yaml"><code class="language-yaml">arr = <span class="token punctuation">[</span>undefined<span class="token punctuation">,</span> undefined<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'false'</span><span class="token punctuation">,</span> <span class="token boolean important">false</span><span class="token punctuation">,</span> <span class="token boolean important">true</span><span class="token punctuation">,</span> <span class="token null important">null</span><span class="token punctuation">,</span> <span class="token string">'null'</span><span class="token punctuation">]</span>
-
-arr.filter(e =<span class="token punctuation">></span> e)
-
-或者
-
-arr.filter(Boolean)
-</code></pre>
-<p>结果：<code>[1, &quot;false&quot;, true, &quot;null&quot;]</code></p>
+                <h1 id="浅拷贝的实现方式"><a href="#浅拷贝的实现方式" class="headerlink" title="浅拷贝的实现方式"></a>浅拷贝的实现方式</h1><h2 id="1-Object-assign"><a href="#1-Object-assign" class="headerlink" title="1.Object.assign()"></a>1.Object.assign()</h2><p>Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。但是 Object.assign()进行的是浅拷贝，拷贝的是对象的属性的引用，而不是对象本身。</p>
+<p>var obj = { a: {a: “kobe”, b: 39} };<br>var initalObj = Object.assign({}, obj);<br>initalObj.a.a = “wade”;<br>console.log(obj.a.a); //wade<br>注意：当object只有一层的时候，是深拷贝</p>
+<p>let obj = {<br>    username: ‘kobe’<br>    };<br>let obj2 = Object.assign({},obj);<br>obj2.username = ‘wade’;<br>console.log(obj);//{username: “kobe”}</p>
+<h2 id="2-Array-prototype-concat"><a href="#2-Array-prototype-concat" class="headerlink" title="2.Array.prototype.concat()"></a>2.Array.prototype.concat()</h2><p>let arr = [1, 3, {<br>    username: ‘kobe’<br>    }];<br>let arr2=arr.concat();<br>arr2[2].username = ‘wade’;<br>console.log(arr);<br>修改新对象会改到原对象:</p>
+<h2 id="3-Array-prototype-slice"><a href="#3-Array-prototype-slice" class="headerlink" title="3.Array.prototype.slice()"></a>3.Array.prototype.slice()</h2><p>let arr = [1, 3, {<br>    username: ‘ kobe’<br>    }];<br>let arr3 = arr.slice();<br>arr3[2].username = ‘wade’<br>console.log(arr);<br>同样修改新对象会改到原对象:</p>
+<p>关于Array的slice和concat方法的补充说明：Array的slice和concat方法不修改原数组，只会返回一个浅复制了原数组中的元素的一个新数组。</p>
+<p>原数组的元素会按照下述规则拷贝：</p>
+<p>如果该元素是个对象引用(不是实际的对象)，slice 会拷贝这个对象引用到新的数组里。两个对象引用都引用了同一个对象。如果被引用的对象发生改变，则新的和原来的数组中的这个元素也会发生改变。<br>对于字符串、数字及布尔值来说（不是 String、Number 或者 Boolean 对象），slice 会拷贝这些值到新的数组里。在别的数组里修改这些字符串或数字或是布尔值，将不会影响另一个数组。<br>可能这段话晦涩难懂，我们举个例子，将上面的例子小作修改：</p>
+<p>let arr = [1, 3, {<br>    username: ‘ kobe’<br>    }];<br>let arr3 = arr.slice();<br>arr3[1] = 2<br>console.log(arr,arr3);</p>
+<h2 id="4-扩展运算符（…）"><a href="#4-扩展运算符（…）" class="headerlink" title="4.扩展运算符（…）"></a>4.扩展运算符（…）</h2><h2 id="深拷贝的实现方式"><a href="#深拷贝的实现方式" class="headerlink" title="深拷贝的实现方式"></a>深拷贝的实现方式</h2><h2 id="1-JSON-parse-JSON-stringify"><a href="#1-JSON-parse-JSON-stringify" class="headerlink" title="1.JSON.parse(JSON.stringify())"></a>1.JSON.parse(JSON.stringify())</h2><p>let arr = [1, 3, {<br>    username: ‘ kobe’<br>}];<br>let arr4 = JSON.parse(JSON.stringify(arr));<br>arr4[2].username = ‘duncan’;<br>console.log(arr, arr4)</p>
+<p>原理： 用JSON.stringify将对象转成JSON字符串，再用JSON.parse把字符串解析成对象，一去一来，新的对象产生了，而且对象会开辟新的栈，实现深拷贝。</p>
+<p>这种方法虽然可以实现数组或对象深拷贝,但不能处理函数和正则，因为这两者基于JSON.stringify和JSON.parse处理后，得到的正则就不再是正则（变为空对象），得到的函数就不再是函数（变为null）了。</p>
+<p>let arr = [1, 3, {<br>    username: ‘ kobe’<br>},function(){}];<br>let arr4 = JSON.parse(JSON.stringify(arr));<br>arr4[2].username = ‘duncan’;<br>console.log(arr, arr4)</p>
+<p>这是因为JSON.stringify() 方法是将一个JavaScript值(对象或者数组)转换为一个 JSON字符串，不能接受函数</p>
+<h2 id="手写递归方法"><a href="#手写递归方法" class="headerlink" title="手写递归方法"></a>手写递归方法</h2><p>递归方法实现深度克隆原理：遍历对象、数组直到里边都是基本数据类型，然后再去复制，就是深度拷贝</p>
+<p>//定义检测数据类型的功能函数<br>function checkedType(target) {<br>  return Object.prototype.toString.call(target).slice(8, -1)<br>}<br>//实现深度克隆—对象/数组<br>function clone(target) {<br>  //判断拷贝的数据类型<br>  //初始化变量result 成为最终克隆的数据<br>  let result,<br>    targetType = checkedType(target)<br>  if (targetType === ‘Object’) {<br>    result = {}<br>  } else if (targetType === ‘Array’) {<br>    result = []<br>  } else {<br>    return target<br>  }<br>  //遍历目标数据<br>  for (let i in target) {<br>    //获取遍历数据结构的每一项值。<br>    let value = target[i]<br>    //判断目标结构里的每一值是否存在对象/数组<br>    if (checkedType(value) === ‘Object’ || checkedType(value) === ‘Array’) {<br>      //对象/数组里嵌套了对象/数组<br>      //继续遍历获取到value值<br>      result[i] = clone(value)<br>    } else {<br>      //获取到value值是基本的数据类型或者是函数。<br>      result[i] = value<br>    }<br>  }<br>  return result<br>}</p>
+<h2 id="函数库lodash"><a href="#函数库lodash" class="headerlink" title="函数库lodash"></a>函数库lodash</h2><p>该函数库也有提供_.cloneDeep用来做 Deep Copy</p>
+<p>var _ = require(‘lodash’);<br>var obj1 = {<br>    a: 1,<br>    b: { f: { g: 1 } },<br>    c: [1, 2, 3]<br>};<br>var obj2 = _.cloneDeep(obj1);<br>console.log(obj1.b.f === obj2.b.f);<br>// false</p>
 
             </div>
             <hr/>
@@ -460,25 +467,24 @@ arr.filter(Boolean)
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/11/前端性能优化/">
+                <a href="/2019/04/24/防抖和节流/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="前端性能优化">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="节流-未完成">
                         
-                        <span class="card-title">前端性能优化</span>
+                        <span class="card-title">节流-未完成</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近看了幕课网 web 前端性能优化的课程，为避免以后忘记，总结了下笔记：
-什么是了解C/S架构和B/S架构？C/S结构，即Client/Server(客户机/服务器)结构，是通过将任务合理分配到Client端和Server端，降低了系统的
+                            function debounce(fn, wait, immediate) {    let timmerId = null;    wait =+ wait || 0;    if(typeof fn !== ‘function’) {
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-11
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
                         </span>
                         <span class="publish-author">
                             
@@ -491,24 +497,20 @@ arr.filter(Boolean)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/html/" target="_blank">
-                        <span class="chip bg-color">html</span>
+                    <a href="/tags/script/" target="_blank">
+                        <span class="chip bg-color">script</span>
                     </a>
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/Node/" target="_blank">
+                        <span class="chip bg-color">Node</span>
                     </a>
                     
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/nginx/" target="_blank">
+                        <span class="chip bg-color">nginx</span>
                     </a>
                     
-                    <a href="/tags/CS/" target="_blank">
-                        <span class="chip bg-color">CS</span>
-                    </a>
-                    
-                    <a href="/tags/BS/" target="_blank">
-                        <span class="chip bg-color">BS</span>
+                    <a href="/tags/iframe/" target="_blank">
+                        <span class="chip bg-color">iframe</span>
                     </a>
                     
                 </div>
@@ -519,28 +521,27 @@ arr.filter(Boolean)
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/24/Hexo搭建博客/">
+                <a href="/2019/04/16/深拷贝和浅拷贝/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="使用Hexo+hexo-theme-matery搭建一个属于自己的博客">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="深拷贝和浅拷贝">
                         
-                        <span class="card-title">使用Hexo+hexo-theme-matery搭建一个属于自己的博客</span>
+                        <span class="card-title">深拷贝和浅拷贝</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近无意发现Hexo博客框架，官网介绍Hexo是一个快速、简洁且高效的博客框架。想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
-1. 安装 Hexo$ npm install -g hex
+                            浅拷贝的实现方式1.Object.assign()Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。但是 Object.assign()进行的是浅拷贝，拷贝的是对象的属性的引用，而不
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-16
                             </span>
                         <span class="publish-author">
                             
@@ -550,15 +551,12 @@ arr.filter(Boolean)
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/hexo-theme-matery/" target="_blank">
-                        <span class="chip bg-color">hexo-theme-matery</span>
+                    <a href="/tags/js/" target="_blank">
+                        <span class="chip bg-color">js</span>
                     </a>
                     
                 </div>

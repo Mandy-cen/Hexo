@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="js数组中过滤掉空值,假值, Mandy">
-    <meta name="description" content="利用Array的filter过滤掉数组里的空值假值（false, undefined, NaN, null, 0）
-arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
+    <meta name="keywords" content="清除浮动的几种方法, Mandy">
+    <meta name="description" content="浮动到底是什么？W3school中给出的浮动定义为浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。由于浮动框脱离文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。css浮动
+浮动有什么特点？浮">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>js数组中过滤掉空值,假值 | Mandy</title>
+    <title>清除浮动的几种方法 | Mandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +261,13 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        js数组中过滤掉空值,假值
+                        清除浮动的几种方法
                     </div>
                 </div>
             </div>
@@ -378,8 +378,8 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/javaScript/" target="_blank">
-                                <span class="chip bg-color">javaScript</span>
+                            <a href="/tags/css/" target="_blank">
+                                <span class="chip bg-color">css</span>
                             </a>
                         
                     </div>
@@ -393,7 +393,7 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-29
+                    2019-05-07
                 </div>
 
                 
@@ -409,17 +409,132 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>利用Array的filter过滤掉数组里的空值假值（false, undefined, NaN, null, 0）</p>
-<pre class=" language-yaml"><code class="language-yaml">arr = <span class="token punctuation">[</span>undefined<span class="token punctuation">,</span> undefined<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'false'</span><span class="token punctuation">,</span> <span class="token boolean important">false</span><span class="token punctuation">,</span> <span class="token boolean important">true</span><span class="token punctuation">,</span> <span class="token null important">null</span><span class="token punctuation">,</span> <span class="token string">'null'</span><span class="token punctuation">]</span>
+                <h2 id="浮动到底是什么？"><a href="#浮动到底是什么？" class="headerlink" title="浮动到底是什么？"></a>浮动到底是什么？</h2><p>W3school中给出的浮动定义为浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。由于浮动框脱离文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。<br>css浮动</p>
+<h2 id="浮动有什么特点？"><a href="#浮动有什么特点？" class="headerlink" title="浮动有什么特点？"></a>浮动有什么特点？</h2><p>浮动的特点，可以用八个字总结：脱标、贴边、字围和收缩。</p>
+<p>为了更好说明，请看下图：<br>当框 1 向左浮动时，它脱离文档流（脱标）并且向左移动（贴边），直到它的左边缘碰到包含框的左边缘。因为它不再处于文档流中，所以它不占据空间，实际上覆盖住了框 2，使框 2 从视图中消失。如果框2中有文字，就会围着框1排开（字围）。</p>
+<p>如果把所有三个框都向左浮动，那么框 1 向左浮动直到碰到包含框，另外两个框向左浮动直到碰到前一个浮动框。<br>CSS 浮动实例 - 向左浮动的元素<br>下面着重讲解下第四个特点–收缩</p>
+<p>一个浮动的内联元素（比如span img标签）不需要设置display：block就可以设置宽度。</p>
+<style>
+        div{
+            float: left;
+            background-color: greenyellow;
+        }
+    </style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<body>
+<div>
+    这是一段文字
+</div>
+</body>
+得到以下的效果：
 
-arr.filter(e =<span class="token punctuation">></span> e)
+<p>我们都知道div标签是块级元素，会独占一行，然而上面的例子中将div设置为左浮后，其宽度不再是占满一行，而是收紧为内部元素的宽度，这就是浮动第四个特征的含义。</p>
+<h2 id="动有什么缺点？"><a href="#动有什么缺点？" class="headerlink" title="动有什么缺点？"></a>动有什么缺点？</h2><p>先看下面这段代码：</p>
+  <style>
+      .parent{
+          border: solid 5px;
+          width:300px;
+      }
+      .child:nth-child(1){
+          height: 100px;
+          width: 100px;
+          background-color: yellow;
+          float: left;
+      }
+      .child:nth-child(2){
+          height: 100px;
+          width: 100px;
+          background-color: red;
+          float: left;
+      }
+      .child:nth-child(3){
+          height: 100px;
+          width: 100px;
+          background-color: greenyellow;
+          float: left;
+      }
+    </style>
 
-或者
+<body>
+<div class="parent">
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+</div>
+</body>
+我们想让父容器包裹着三个浮动元素，然而事与愿违，得到却是这样的结果：
+父容器高度塌陷
+这就是浮动带来副作用----父容器高度塌陷，于是清理浮动就显着至关重要。
 
-arr.filter(Boolean)
-</code></pre>
-<p>结果：<code>[1, &quot;false&quot;, true, &quot;null&quot;]</code></p>
+<h2 id="如何清理浮动？"><a href="#如何清理浮动？" class="headerlink" title="如何清理浮动？"></a>如何清理浮动？</h2><p>清除浮动不是不用浮动，清除浮动产生的父容器高度塌陷。</p>
+<h3 id="给浮动元素的父元素添加高度（扩展性不好）"><a href="#给浮动元素的父元素添加高度（扩展性不好）" class="headerlink" title="给浮动元素的父元素添加高度（扩展性不好）"></a>给浮动元素的父元素添加高度（扩展性不好）</h3><p>如果一个元素要浮动，那么它的父元素一定要有高度。高度的盒子，才能关住浮动。可以通过直接给父元素设置height，实际应用中我们不大可能给所有的盒子加高度，不仅麻烦，并且不能适应页面的快速变化；另外一种，父容器的高度可以通过内容撑开（比如img图片），实际当中此方法用的比较多。</p>
+<p>套路2：clear:both;<br>在最后一个子元素新添加最后一个冗余元素，然后将其设置clear:both,这样就可以清除浮动。这里强调一点，即在父级元素末尾添加的元素必须是一个块级元素，否则无法撑起父级元素高度。</p>
+<pre><code>&lt;div id=&quot;wrap&quot;&gt;
+    &lt;div id=&quot;inner&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;clear: both;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+#wrap{
+      border: 1px solid;
+}
+#inner{
+      float: left;
+      width: 200px;
+      height: 200px;
+      background: pink;
+}</code></pre><h3 id="伪元素清除浮动"><a href="#伪元素清除浮动" class="headerlink" title="伪元素清除浮动"></a>伪元素清除浮动</h3><p>上面那种办法固然可以清除浮动，但是我们不想在页面中添加这些没有意义的冗余元素，此时如何清除浮动吗？<br>结合 :after 伪元素和 IEhack ，可以完美兼容当前主流的各大浏览器，这里的 IEhack 指的是触发 hasLayout。</p>
+<div id="wrap" class="clearfix">
+    <div id="inner"></div>
+</div>
+      #wrap {
+        border: 1px solid;
+      }
+      #inner {
+        float: left;
+        width: 200px;
+        height: 200px;
+        background: pink;
+      }
+      /*开启haslayout*/
+      .clearfix {
+        *zoom: 1;
+      }
+      /*ie6 7 不支持伪元素*/
+      .clearfix:after {
+        content: '';
+        display: block;
+        clear: both;
+        height:0;
+        line-height:0;
+        visibility:hidden;//允许浏览器渲染它，但是不显示出来
+      }
+给浮动元素的父容器添加一个clearfix的class，然后给这个class添加一个:after伪元素，实现元素末尾添加一个看不见的块元素来清理浮动。这是通用的清理浮动方案，推荐使用
 
+<h3 id="给父元素使用overflow-hidden"><a href="#给父元素使用overflow-hidden" class="headerlink" title="给父元素使用overflow:hidden;"></a>给父元素使用overflow:hidden;</h3><p>这种方案让父容器形成了BFC（块级格式上下文），而BFC可以包含浮动，通常用来解决浮动父元素高度坍塌的问题。</p>
+<h2 id="BFC的触发方式"><a href="#BFC的触发方式" class="headerlink" title="BFC的触发方式"></a>BFC的触发方式</h2><p>我们可以给父元素添加以下属性来触发BFC：</p>
+<p>float 为 left | right</p>
+<p>overflow 为 hidden | auto | scorll</p>
+<p>display 为 table-cell | table-caption | inline-block</p>
+<p>position 为 absolute | fixed</p>
+<p>这里可以给父元素设置overflow:auto，但是为了兼容IE最好使用overflow:hidden。</p>
+<p>但这种办法有个缺陷：如果有内容出了盒子，用这种方法就会把多的部分裁切掉，所以这时候不能使用。</p>
+<p>BFC的主要特征:</p>
+<p>BFC容器是一个隔离的容器，和其他元素互不干扰；所以我们可以用触发两个元素的BFC来解决垂直边距折叠问题。</p>
+<p>BFC不会重叠浮动元素</p>
+<p>BFC可以包含浮动,这可以清除浮动。</p>
+<p>套路5：br标签清浮动<br>br标签存在一个属性：clear。这个属性就是能够清除浮动的利器，在br标签中设置属性clear，并赋值all。即能清除掉浮动。</p>
+<pre><code>&lt;div id=&quot;wrap&quot;&gt;
+  &lt;div id=&quot;inner&quot;&gt;&lt;/div&gt;
+  &lt;br clear=&quot;all&quot; /&gt;
+&lt;/div&gt;
+  #wrap {
+    border: 1px solid;
+  }
+  #inner {
+    float: left;
+    width: 200px;
+    height: 200px;
+    background: pink;
+  }</code></pre>
             </div>
             <hr/>
 
@@ -460,25 +575,24 @@ arr.filter(Boolean)
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/11/前端性能优化/">
+                <a href="/2019/05/26/前端模块化/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="前端性能优化">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="前端模块化">
                         
-                        <span class="card-title">前端性能优化</span>
+                        <span class="card-title">前端模块化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近看了幕课网 web 前端性能优化的课程，为避免以后忘记，总结了下笔记：
-什么是了解C/S架构和B/S架构？C/S结构，即Client/Server(客户机/服务器)结构，是通过将任务合理分配到Client端和Server端，降低了系统的
+                            前言为什么有前端模块化：前端代码的日益增多，避免命名冲突，更高复用性，更好的分离，按需加载。模块化的历史：全局function模式（命名冲突） -&gt; namespace,简单对象封装（外部可以直接修改内部数据）-&gt;IIFE问题（
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-11
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-26
                         </span>
                         <span class="publish-author">
                             
@@ -491,24 +605,8 @@ arr.filter(Boolean)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/html/" target="_blank">
-                        <span class="chip bg-color">html</span>
-                    </a>
-                    
                     <a href="/tags/js/" target="_blank">
                         <span class="chip bg-color">js</span>
-                    </a>
-                    
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
-                    </a>
-                    
-                    <a href="/tags/CS/" target="_blank">
-                        <span class="chip bg-color">CS</span>
-                    </a>
-                    
-                    <a href="/tags/BS/" target="_blank">
-                        <span class="chip bg-color">BS</span>
                     </a>
                     
                 </div>
@@ -522,25 +620,25 @@ arr.filter(Boolean)
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/24/Hexo搭建博客/">
+                <a href="/2019/04/24/DOM事件机制/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="使用Hexo+hexo-theme-matery搭建一个属于自己的博客">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="事件">
                         
-                        <span class="card-title">使用Hexo+hexo-theme-matery搭建一个属于自己的博客</span>
+                        <span class="card-title">事件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近无意发现Hexo博客框架，官网介绍Hexo是一个快速、简洁且高效的博客框架。想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
-1. 安装 Hexo$ npm install -g hex
+                            DOM事件模型分为捕获和冒泡。一个事件发生后，会在子元素和父元素之间传播（propagation）。这种传播分成三个阶段。（1）捕获阶段：事件从window对象自上而下向目标节点传播的阶段；
+（2）目标阶段：真正的目标节点正在处理事件的阶段
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
                             </span>
                         <span class="publish-author">
                             
@@ -553,12 +651,12 @@ arr.filter(Boolean)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/DOM/" target="_blank">
+                        <span class="chip bg-color">DOM</span>
                     </a>
                     
-                    <a href="/tags/hexo-theme-matery/" target="_blank">
-                        <span class="chip bg-color">hexo-theme-matery</span>
+                    <a href="/tags/html/" target="_blank">
+                        <span class="chip bg-color">html</span>
                     </a>
                     
                 </div>
