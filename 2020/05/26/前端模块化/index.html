@@ -409,13 +409,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为什么有前端模块化：<br>前端代码的日益增多，避免命名冲突，更高复用性，更好的分离，按需加载。<br>模块化的历史：全局function模式（命名冲突） -&gt; namespace,简单对象封装（外部可以直接修改内部数据）-&gt;IIFE问题（依赖）-&gt;IIFE增强（引入依赖），现代模块化的基石。</p>
-<p>模块化规范的必要性：引入多个<script>出现的问题->请求过多，依赖模糊，难以维护。</p>
+<p>模块化规范的必要性：引入多个script标签出现的问题-&gt;请求过多，依赖模糊，难以维护。</p>
 <h2 id="CommonJS："><a href="#CommonJS：" class="headerlink" title="CommonJS："></a>CommonJS：</h2><p>特点：同步加载，适用于服务端，加载一次缓存结果。浏览器端需要编译后执行。<br>语法：<br>暴露模块：module.exports = value或exports.value = value<br>引入模块：require(xxx)</p>
-<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD:"></a>AMD:</h2><p>特点：异步加载，允许指定回调函数，适用于浏览器端。<br>语法：<br>定义：<br>define(['module1','module2'], function(m1, m2){<br>return 模块<br>})<br>使用：<br>require(['module1', 'module2'], function(m1, m2){<br>使用m1, m2<br>})<br>借助工具：RequireJS</p>
-<h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD:"></a>CMD:</h2><p>特点：用于浏览器端，模块加载是异步的，模块使用时才会加载执行。结合了CommonJS和AMD规范的特点。<br>定义暴露模块：<br>define(function(require, exports, module){<br>//引入依赖模块(同步)<br>var module2 = require('./module2')<br>//引入依赖模块(异步)<br>require.async('./module3', function (m3) {<br>})<br>//暴露模块<br>exports.xxx = value<br>})<br>引入模块：<br>define(function (require) {<br>var m1 = require('./module1')<br>var m4 = require('./module4')<br>m1.show()<br>m4.show()<br>})</p>
+<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD:"></a>AMD:</h2><p>特点：异步加载，允许指定回调函数，适用于浏览器端。<br>语法：<br>定义：<br>define([‘module1’,’module2’], function(m1, m2){<br>return 模块<br>})<br>使用：<br>require([‘module1’, ‘module2’], function(m1, m2){<br>使用m1, m2<br>})<br>借助工具：RequireJS</p>
+<h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD:"></a>CMD:</h2><p>特点：用于浏览器端，模块加载是异步的，模块使用时才会加载执行。结合了CommonJS和AMD规范的特点。<br>定义暴露模块：<br>define(function(require, exports, module){<br>//引入依赖模块(同步)<br>var module2 = require(‘./module2’)<br>//引入依赖模块(异步)<br>require.async(‘./module3’, function (m3) {<br>})<br>//暴露模块<br>exports.xxx = value<br>})<br>引入模块：<br>define(function (require) {<br>var m1 = require(‘./module1’)<br>var m4 = require(‘./module4’)<br>m1.show()<br>m4.show()<br>})</p>
 <p>借助工具：sea.js</p>
 <h2 id="ES6模块化："><a href="#ES6模块化：" class="headerlink" title="ES6模块化："></a>ES6模块化：</h2><p>特点：编译时确定依赖关系。</p>
-</script></p>
+
             </div>
             <hr/>
 
