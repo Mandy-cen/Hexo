@@ -4,9 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="js数组中过滤掉空值,假值, Mandy">
-    <meta name="description" content="利用Array的filter过滤掉数组里的空值假值（false, undefined, NaN, null, 0）
-arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
+    <meta name="keywords" content="前端模块化, Mandy">
+    <meta name="description" content="前言为什么有前端模块化：前端代码的日益增多，避免命名冲突，更高复用性，更好的分离，按需加载。模块化的历史：全局function模式（命名冲突） -&amp;gt; namespace,简单对象封装（外部可以直接修改内部数据）-&amp;gt;IIFE问题（">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>js数组中过滤掉空值,假值 | Mandy</title>
+    <title>前端模块化 | Mandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +260,13 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        js数组中过滤掉空值,假值
+                        前端模块化
                     </div>
                 </div>
             </div>
@@ -378,8 +377,8 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/javaScript/" target="_blank">
-                                <span class="chip bg-color">javaScript</span>
+                            <a href="/tags/js/" target="_blank">
+                                <span class="chip bg-color">js</span>
                             </a>
                         
                     </div>
@@ -393,7 +392,7 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-29
+                    2019-05-26
                 </div>
 
                 
@@ -409,17 +408,14 @@ arr = [undefined, undefined, 0, 1, &#39;&#39;, &#39;false&#39;, false, true, n">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>利用Array的filter过滤掉数组里的空值假值（false, undefined, NaN, null, 0）</p>
-<pre class=" language-yaml"><code class="language-yaml">arr = <span class="token punctuation">[</span>undefined<span class="token punctuation">,</span> undefined<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'false'</span><span class="token punctuation">,</span> <span class="token boolean important">false</span><span class="token punctuation">,</span> <span class="token boolean important">true</span><span class="token punctuation">,</span> <span class="token null important">null</span><span class="token punctuation">,</span> <span class="token string">'null'</span><span class="token punctuation">]</span>
-
-arr.filter(e =<span class="token punctuation">></span> e)
-
-或者
-
-arr.filter(Boolean)
-</code></pre>
-<p>结果：<code>[1, &quot;false&quot;, true, &quot;null&quot;]</code></p>
-
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为什么有前端模块化：<br>前端代码的日益增多，避免命名冲突，更高复用性，更好的分离，按需加载。<br>模块化的历史：全局function模式（命名冲突） -&gt; namespace,简单对象封装（外部可以直接修改内部数据）-&gt;IIFE问题（依赖）-&gt;IIFE增强（引入依赖），现代模块化的基石。</p>
+<p>模块化规范的必要性：引入多个<script>出现的问题->请求过多，依赖模糊，难以维护。</p>
+<h2 id="CommonJS："><a href="#CommonJS：" class="headerlink" title="CommonJS："></a>CommonJS：</h2><p>特点：同步加载，适用于服务端，加载一次缓存结果。浏览器端需要编译后执行。<br>语法：<br>暴露模块：module.exports = value或exports.value = value<br>引入模块：require(xxx)</p>
+<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD:"></a>AMD:</h2><p>特点：异步加载，允许指定回调函数，适用于浏览器端。<br>语法：<br>定义：<br>define(['module1','module2'], function(m1, m2){<br>return 模块<br>})<br>使用：<br>require(['module1', 'module2'], function(m1, m2){<br>使用m1, m2<br>})<br>借助工具：RequireJS</p>
+<h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD:"></a>CMD:</h2><p>特点：用于浏览器端，模块加载是异步的，模块使用时才会加载执行。结合了CommonJS和AMD规范的特点。<br>定义暴露模块：<br>define(function(require, exports, module){<br>//引入依赖模块(同步)<br>var module2 = require('./module2')<br>//引入依赖模块(异步)<br>require.async('./module3', function (m3) {<br>})<br>//暴露模块<br>exports.xxx = value<br>})<br>引入模块：<br>define(function (require) {<br>var m1 = require('./module1')<br>var m4 = require('./module4')<br>m1.show()<br>m4.show()<br>})</p>
+<p>借助工具：sea.js</p>
+<h2 id="ES6模块化："><a href="#ES6模块化：" class="headerlink" title="ES6模块化："></a>ES6模块化：</h2><p>特点：编译时确定依赖关系。</p>
+</script></p>
             </div>
             <hr/>
 
@@ -460,25 +456,24 @@ arr.filter(Boolean)
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/11/前端性能优化/">
+                <a href="/2019/06/12/浅析浏览器渲染原理/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="前端性能优化">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="浏览器渲染原理">
                         
-                        <span class="card-title">前端性能优化</span>
+                        <span class="card-title">浏览器渲染原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近看了幕课网 web 前端性能优化的课程，为避免以后忘记，总结了下笔记：
-什么是了解C/S架构和B/S架构？C/S结构，即Client/Server(客户机/服务器)结构，是通过将任务合理分配到Client端和Server端，降低了系统的
+                            前言浏览器的内核是指支持浏览器运行的最核心的部分，分为两部分，一个是渲染引擎 和 js引擎。它负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-11
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-12
                         </span>
                         <span class="publish-author">
                             
@@ -487,30 +482,6 @@ arr.filter(Boolean)
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/html/" target="_blank">
-                        <span class="chip bg-color">html</span>
-                    </a>
-                    
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
-                    </a>
-                    
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
-                    </a>
-                    
-                    <a href="/tags/CS/" target="_blank">
-                        <span class="chip bg-color">CS</span>
-                    </a>
-                    
-                    <a href="/tags/BS/" target="_blank">
-                        <span class="chip bg-color">BS</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -522,25 +493,25 @@ arr.filter(Boolean)
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/24/Hexo搭建博客/">
+                <a href="/2019/05/07/清除浮动的几种方法/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="使用Hexo+hexo-theme-matery搭建一个属于自己的博客">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="清除浮动的几种方法">
                         
-                        <span class="card-title">使用Hexo+hexo-theme-matery搭建一个属于自己的博客</span>
+                        <span class="card-title">清除浮动的几种方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近无意发现Hexo博客框架，官网介绍Hexo是一个快速、简洁且高效的博客框架。想着可以利用Hexo+hexo-theme-matery搭建一个博客，用来记录自己的所学到的知识。
-1. 安装 Hexo$ npm install -g hex
+                            浮动到底是什么？W3school中给出的浮动定义为浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。由于浮动框脱离文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。css浮动
+浮动有什么特点？浮
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-07
                             </span>
                         <span class="publish-author">
                             
@@ -553,12 +524,8 @@ arr.filter(Boolean)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/hexo-theme-matery/" target="_blank">
-                        <span class="chip bg-color">hexo-theme-matery</span>
+                    <a href="/tags/css/" target="_blank">
+                        <span class="chip bg-color">css</span>
                     </a>
                     
                 </div>
